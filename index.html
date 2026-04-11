@@ -152,12 +152,17 @@
         </div>
         
         <div class="flex items-center gap-6">
-            <div class="hidden md:flex space-x-8 font-bold uppercase text-xs tracking-[0.3em]">
+            <div class="hidden md:flex space-x-6 lg:space-x-8 font-bold uppercase text-xs tracking-[0.2em] lg:tracking-[0.3em] items-center">
                 <a href="#inicio" class="hover:text-red-600 transition relative group text-black">Inicio<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 <a href="#historia" class="hover:text-red-600 transition relative group text-black">Historia<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 <a href="#banda" class="hover:text-red-600 transition relative group text-black">Banda<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
-                <a href="#redes" class="hover:text-red-600 transition relative group text-black">Redes<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 <a href="#booking" class="hover:text-red-600 transition relative group text-black">Booking<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
+                
+                <div class="flex space-x-4 pl-6 border-l-2 border-black text-lg">
+                    <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-spotify"></i></a>
+                </div>
             </div>
 
             <div class="md:hidden text-2xl cursor-pointer hover:text-red-600 transition active:scale-90 text-black" id="mobile-menu-btn">
@@ -169,8 +174,13 @@
              <a href="#inicio" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Inicio</a>
              <a href="#historia" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Historia</a>
              <a href="#banda" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Banda</a>
-             <a href="#redes" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Redes</a>
              <a href="#booking" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Booking</a>
+             
+             <div class="flex space-x-8 pt-4 border-t-2 border-black w-1/2 justify-center text-3xl">
+                 <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                 <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-youtube"></i></a>
+                 <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-spotify"></i></a>
+             </div>
         </div>
     </nav>
 
@@ -454,7 +464,6 @@
         // =========================================================
         const audio = document.getElementById('bg-audio');
         
-        // ¡AQUÍ ESTABA EL ERROR! Ahora los nombres son idénticos a los archivos de GitHub
         const playlist = [
             'capricho.mp3', 
             'gata.mp3', 
