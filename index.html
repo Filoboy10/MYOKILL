@@ -439,57 +439,44 @@
         });
 
         // =========================================================
-        // Formateador de Teléfono Automático (***-***-****) (Turn 12)
+        // Formateador de Teléfono Automático (***-***-****)
         // =========================================================
         const phoneInput = document.getElementById('phone-input');
         if (phoneInput) {
             phoneInput.addEventListener('input', function (e) {
-                // Elimina todo lo que no sea número
                 let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-                // Aplica los guiones según la longitud
                 e.target.value = !x[2] ? x[1] : x[1] + '-' + x[2] + (x[3] ? '-' + x[3] : '');
             });
         }
 
         // =========================================================
-        // Configuración de Audio Secuencial con Recuperación de Error
-        // Lógica corregida secuencial y loop (Turn 12)
+        // Reproductor Secuencial (Con nombres exactos de GitHub)
         // =========================================================
         const audio = document.getElementById('bg-audio');
-        const playlistRaw = [
+        
+        // ¡AQUÍ ESTABA EL ERROR! Ahora los nombres son idénticos a los archivos de GitHub
+        const playlist = [
             'capricho.mp3', 
             'gata.mp3', 
-            'papa_ganga.mp3', 
-            'Balad_of_wiwi.mp3'
+            'pepe_ganga.mp3', 
+            'ballad_of_wiwi.mp3'
         ];
         
-        let shuffledPlaylist = [];
         let currentTrackIndex = 0;
-
-        // Función para mezclar la playlist (para que no toque el mismo orden)
-        function shuffleArray(array) {
-            let shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        }
 
         function playNext() {
             currentTrackIndex++;
-            if (currentTrackIndex >= playlistRaw.length) {
-                // Si llegamos al final, volvemos a mezclar y reiniciar
-                shuffledPlaylist = shuffleArray(playlistRaw);
-                currentTrackIndex = 0;
+            if (currentTrackIndex >= playlist.length) {
+                currentTrackIndex = 0; 
             }
-            loadTrack(currentTrackIndex);
             
-            // Re-reproducir secuencialmente. Esto soluciona que solo suenen 2 canciones.
+            audio.src = playlist[currentTrackIndex];
+            audio.load();
+            
             let playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.catch(error => {
-                    console.log("El navegador pausó el salto automático. Esperando al usuario.");
+                    console.log("El navegador pausó la reproducción. Esperando clic del usuario.");
                     const musicBtn = document.getElementById('music-toggle');
                     if(musicBtn){
                         musicBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
@@ -501,19 +488,12 @@
 
         if (audio) {
             audio.volume = 0.25;
-            audio.loop = false; // IMPORTANTE: Loop debe ser false para que secuencial funcione
+            audio.loop = false; 
             
-            // Mezcla inicial
-            shuffledPlaylist = shuffleArray(playlistRaw);
-            
-            // Carga la primera canción (index 0)
-            audio.src = shuffledPlaylist[currentTrackIndex];
+            audio.src = playlist[currentTrackIndex];
             audio.load();
 
-            // Cuando una pista termine, pasar a la siguiente secuencialmente (SOLUCION AUDIO TURN 12)
             audio.addEventListener('ended', playNext);
-            
-            // Si hay un error cargando el archivo (ej. no existe), sáltalo y ve al próximo
             audio.addEventListener('error', playNext);
         }
 
@@ -533,7 +513,7 @@
         }
 
         // =========================================================
-        // Lógica del Menú Móvil (Mantenida)
+        // Lógica del Menú Móvil
         // =========================================================
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -562,7 +542,7 @@
         }
 
         // =========================================================
-        // Lógica del Formulario de Contacto (Formspree AJAX + Pop-up)
+        // Lógica del Formulario de Contacto (Formspree AJAX)
         // =========================================================
         const form = document.getElementById('contact-form');
         if (form) {
