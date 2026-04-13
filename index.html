@@ -135,6 +135,19 @@
             display: inline-block;
             filter: drop-shadow(4px 4px 0px rgba(0,0,0,1)); 
         }
+
+        /* Animación de Wobble para el EP */
+        @keyframes wobble-ep {
+            0%, 85% { transform: rotate(0deg); }
+            88% { transform: rotate(-3deg); }
+            91% { transform: rotate(3deg); }
+            94% { transform: rotate(-3deg); }
+            97% { transform: rotate(3deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .wobble-ep-anim {
+            animation: wobble-ep 4s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-red-600 selection:text-white">
@@ -196,7 +209,7 @@
                 <img src="MYO_LOGO_T.png" alt="MYŌ KILL Official Logo" class="w-64 md:w-96 h-auto mx-auto floating-logo object-contain">
             </div>
             
-            <div id="ep-promo" data-aos="fade-up" data-aos-delay="100" class="mb-6 mt-6 relative max-w-sm mx-auto cursor-pointer p-1 bg-white border-4 border-black shadow-[10px_10px_0px_rgba(0,0,0,1)]">
+            <div id="ep-promo" data-aos="fade-up" data-aos-delay="100" class="mb-6 mt-6 relative max-w-sm mx-auto cursor-pointer p-1 bg-white border-4 border-black shadow-[10px_10px_0px_rgba(0,0,0,1)] wobble-ep-anim">
                 <div class="relative w-full aspect-square overflow-hidden bg-white">
                     <img src="ep-cover.jpg" alt="EP Concrete Steps Cover" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/400x400?text=Sube+ep-cover.jpg'">
                     
@@ -220,11 +233,13 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="150" class="mb-10 flex gap-6 md:gap-8 text-3xl text-black">
+            <div data-aos="fade-up" data-aos-delay="150" class="mb-10 flex flex-wrap justify-center gap-6 md:gap-8 text-3xl text-black">
                 <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-apple"></i></a>
+                <a href="https://music.amazon.com/albums/B0GSSKN2GR?ref=dm_sh_2mddYoIbB3qisVUxypXNrMlzx" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-amazon"></i></a>
             </div>
             
             <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl font-bold text-black mb-8 tracking-[0.3em] uppercase px-4 py-2 bg-white/50 inline-block border border-black/10">
