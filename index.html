@@ -148,22 +148,6 @@
         .wobble-ep-anim {
             animation: wobble-ep 4s ease-in-out infinite;
         }
-
-        /* Utilidad para el Carrusel Vertical de la Sección Shows */
-        .shows-container {
-            height: 220px; 
-        }
-        .show-slide {
-            height: 220px;
-        }
-        @media (min-width: 768px) {
-            .shows-container {
-                height: 120px; 
-            }
-            .show-slide {
-                height: 120px;
-            }
-        }
     </style>
 </head>
 <body class="antialiased selection:bg-red-600 selection:text-white">
@@ -184,7 +168,6 @@
                 <a href="#inicio" class="hover:text-red-600 transition relative group text-black">Inicio<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 <a href="#historia" class="hover:text-red-600 transition relative group text-black">Historia<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 <a href="#banda" class="hover:text-red-600 transition relative group text-black">Banda<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
-                <a href="#shows" class="hover:text-red-600 transition relative group text-black">Shows<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 <a href="#booking" class="hover:text-red-600 transition relative group text-black">Booking<span class="absolute -bottom-2 left-0 w-0 h-1 bg-red-600 transition-all group-hover:w-full"></span></a>
                 
                 <div class="flex space-x-5 pl-6 border-l-2 border-black text-2xl">
@@ -204,7 +187,6 @@
              <a href="#inicio" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Inicio</a>
              <a href="#historia" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Historia</a>
              <a href="#banda" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Banda</a>
-             <a href="#shows" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Shows</a>
              <a href="#booking" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-red-600 transition text-black">Booking</a>
              
              <div class="flex space-x-6 pt-4 border-t-2 border-black w-3/4 justify-center text-3xl">
@@ -399,83 +381,7 @@
         </div>
     </section>
 
-    <section id="shows" class="py-24 bg-white text-black relative border-y-4 border-black">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic section-title">Live Shows</h2>
-                <p class="font-bold tracking-widest text-gray-500 uppercase">Nos vemos en el pit</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto border-4 border-black bg-gray-50 shadow-[8px_8px_0px_var(--punk-red)] overflow-hidden relative shows-container" data-aos="fade-up" data-aos-delay="100">
-                <div id="shows-track" class="transition-transform duration-700 ease-in-out w-full flex flex-col">
-                    
-                    <div class="show-slide w-full flex-shrink-0 flex flex-col md:flex-row items-center justify-between p-6">
-                        <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left w-full md:w-auto">
-                            <div class="text-red-600 font-black">
-                                <span class="text-4xl block leading-none">18</span>
-                                <span class="text-sm tracking-widest uppercase">ABR</span>
-                            </div>
-                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-black pt-4 md:pt-0 md:pl-6">
-                                <h3 class="text-2xl font-black uppercase italic">Festival Florece</h3>
-                                <p class="text-gray-600 font-bold tracking-widest text-sm uppercase mt-1">
-                                    <i class="fa-solid fa-location-dot mr-2 text-red-600"></i>Caguas, PR <span class="mx-2 hidden md:inline">|</span><br class="md:hidden"> <i class="fa-regular fa-clock mr-2 mt-2 md:mt-0"></i>4:00 PM
-                                </p>
-                            </div>
-                        </div>
-                        <a href="#booking" class="btn-punk px-8 py-3 font-black uppercase tracking-widest text-xs mt-6 md:mt-0 w-full md:w-auto text-center rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)]">
-                            Info
-                        </a>
-                    </div>
-
-                    <div class="show-slide w-full flex-shrink-0 flex flex-col md:flex-row items-center justify-between p-6">
-                        <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left w-full md:w-auto">
-                            <div class="text-red-600 font-black">
-                                <span class="text-4xl block leading-none">18</span>
-                                <span class="text-sm tracking-widest uppercase">ABR</span>
-                            </div>
-                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-black pt-4 md:pt-0 md:pl-6">
-                                <h3 class="text-2xl font-black uppercase italic">La Propuesta</h3>
-                                <p class="text-gray-600 font-bold tracking-widest text-sm uppercase mt-1">
-                                    <i class="fa-solid fa-location-dot mr-2 text-red-600"></i>Camuy, PR <span class="mx-2 hidden md:inline">|</span><br class="md:hidden"> <i class="fa-regular fa-clock mr-2 mt-2 md:mt-0"></i>9:00 PM
-                                </p>
-                            </div>
-                        </div>
-                        <a href="#booking" class="btn-punk px-8 py-3 font-black uppercase tracking-widest text-xs mt-6 md:mt-0 w-full md:w-auto text-center rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)]">
-                            Info
-                        </a>
-                    </div>
-
-                    <div class="show-slide w-full flex-shrink-0 flex flex-col md:flex-row items-center justify-between p-6">
-                        <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left w-full md:w-auto">
-                            <div class="text-red-600 font-black">
-                                <span class="text-4xl block leading-none">26</span>
-                                <span class="text-sm tracking-widest uppercase">ABR</span>
-                            </div>
-                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-black pt-4 md:pt-0 md:pl-6">
-                                <h3 class="text-2xl font-black uppercase italic">Brew</h3>
-                                <p class="text-gray-600 font-bold tracking-widest text-sm uppercase mt-1">
-                                    <i class="fa-solid fa-location-dot mr-2 text-red-600"></i>Aguadilla, PR <span class="mx-2 hidden md:inline">|</span><br class="md:hidden"> <i class="fa-regular fa-clock mr-2 mt-2 md:mt-0"></i>4:00 PM
-                                </p>
-                            </div>
-                        </div>
-                        <a href="#booking" class="btn-punk px-8 py-3 font-black uppercase tracking-widest text-xs mt-6 md:mt-0 w-full md:w-auto text-center rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)]">
-                            Info
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            
-            <div class="flex justify-center gap-2 mt-6">
-                <span class="w-2 h-2 rounded-full bg-red-600 indicator-dot transition-colors"></span>
-                <span class="w-2 h-2 rounded-full bg-gray-300 indicator-dot transition-colors"></span>
-                <span class="w-2 h-2 rounded-full bg-gray-300 indicator-dot transition-colors"></span>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="redes" class="py-24 bg-gray-100 relative">
+    <section id="redes" class="py-24 bg-white relative border-y-4 border-black">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-16" data-aos="fade-up">
                 <h2 class="text-5xl md:text-7xl font-black mb-4 uppercase italic section-title">Síguenos</h2>
@@ -606,32 +512,6 @@
                 const percentage = (currentHeroSlide * 100) / totalHeroSlides;
                 heroShowsTrack.style.transform = `translateY(-${percentage}%)`;
             }, 3500); 
-        }
-
-        // =========================================================
-        // LÓGICA DEL CARRUSEL DE SHOWS DETALLADO (SECCIÓN INFERIOR)
-        // =========================================================
-        const showsTrack = document.getElementById('shows-track');
-        const dots = document.querySelectorAll('.indicator-dot');
-        
-        if (showsTrack && showsTrack.children.length > 0) {
-            const totalSlides = showsTrack.children.length;
-            let currentSlide = 0;
-            
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                showsTrack.style.transform = `translateY(-${currentSlide * 100}%)`;
-                
-                dots.forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.remove('bg-gray-300');
-                        dot.classList.add('bg-red-600');
-                    } else {
-                        dot.classList.remove('bg-red-600');
-                        dot.classList.add('bg-gray-300');
-                    }
-                });
-            }, 4000); 
         }
 
         // =========================================================
