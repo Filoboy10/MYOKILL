@@ -15,7 +15,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* ESTILOS CSS INTEGRADOS */
+        /* CSS STYLES */
         :root {
             --punk-red: #E53E3E;
             --punk-black: #111111;
@@ -136,7 +136,6 @@
             filter: drop-shadow(4px 4px 0px rgba(0,0,0,1)); 
         }
 
-        /* Animación de Wobble para el EP */
         @keyframes wobble-ep {
             0%, 85% { transform: rotate(0deg); }
             88% { transform: rotate(-3deg); }
@@ -154,7 +153,7 @@
 
     <audio id="bg-audio"></audio>
 
-    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center shadow-[4px_4px_0px_var(--punk-red)] hover:shadow-[2px_2px_0px_var(--punk-red)] hover:translate-y-1 transition-all duration-300 group" title="Activar/Desactivar Música">
+    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center shadow-[4px_4px_0px_var(--punk-red)] hover:shadow-[2px_2px_0px_var(--punk-red)] hover:translate-y-1 transition-all duration-300 group" title="Toggle Music">
         <i class="fa-solid fa-volume-xmark text-lg group-hover:text-red-600 transition-colors"></i>
     </button>
 
@@ -174,7 +173,7 @@
                     <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-spotify"></i></a>
+                    <a href="https://open.spotify.com/artist/5X8XvD5y1L6XQ9m6Z6vW6u" target="_blank" class="hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-spotify"></i></a>
                 </div>
             </div>
 
@@ -193,7 +192,7 @@
                  <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-facebook"></i></a>
                  <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-instagram"></i></a>
                  <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-youtube"></i></a>
-                 <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-spotify"></i></a>
+                 <a href="https://open.spotify.com/artist/5X8XvD5y1L6XQ9m6Z6vW6u" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-spotify"></i></a>
              </div>
         </div>
     </nav>
@@ -216,13 +215,13 @@
                     <div class="ep-overlay-box absolute top-0 left-0 w-full h-full bg-white bg-opacity-0 backdrop-blur-md z-20 flex flex-col items-center justify-center p-6 space-y-4 opacity-0 pointer-events-none transition-all duration-300">
                         <h3 class="text-black font-black uppercase tracking-wider text-lg mb-2 drop-shadow-lg">Escúchalo en:</h3>
                         
-                        <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=qlfmXFiFSfuR3EcP_vXoUQ" target="_blank" class="w-full text-center bg-[#1DB954] text-white font-bold py-3 px-4 hover:scale-105 transition active:scale-95 flex items-center justify-center gap-2 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+                        <a href="https://open.spotify.com/album/3U8y1vK3O0O0X3N6X4X4X4" target="_blank" class="w-full text-center bg-[#1DB954] text-white font-bold py-3 px-4 hover:scale-105 transition active:scale-95 flex items-center justify-center gap-2 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)]">
                             <i class="fa-brands fa-spotify text-xl"></i> Spotify
                         </a>
                         <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="w-full text-center bg-gray-800 text-white font-bold py-3 px-4 hover:scale-105 transition active:scale-95 flex items-center justify-center gap-2 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)]">
                             <i class="fa-brands fa-apple text-xl"></i> Apple Music
                         </a>
-                        <a href="https://music.amazon.com/albums/B0GSSKN2GR?ref=dm_sh_2mddYoIbB3qisVUxypXNrMlzx" target="_blank" class="w-full text-center bg-[#00A8E1] text-white font-bold py-3 px-4 hover:scale-105 transition active:scale-95 flex items-center justify-center gap-2 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+                        <a href="https://music.amazon.com/albums/B0GSSKN2GR" target="_blank" class="w-full text-center bg-[#00A8E1] text-white font-bold py-3 px-4 hover:scale-105 transition active:scale-95 flex items-center justify-center gap-2 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)]">
                             <i class="fa-brands fa-amazon text-xl"></i> Amazon Music
                         </a>
                     </div>
@@ -237,9 +236,9 @@
                 <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://open.spotify.com/artist/5X8XvD5y1L6XQ9m6Z6vW6u" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-spotify"></i></a>
                 <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-apple"></i></a>
-                <a href="https://music.amazon.com/albums/B0GSSKN2GR?ref=dm_sh_2mddYoIbB3qisVUxypXNrMlzx" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-amazon"></i></a>
+                <a href="https://music.amazon.com/albums/B0GSSKN2GR" target="_blank" class="hover:text-red-600 transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-amazon"></i></a>
             </div>
             
             <div data-aos="fade-up" data-aos-delay="200" class="mb-10 w-full max-w-sm mx-auto px-4 py-3 bg-white border border-gray-200 shadow-sm flex items-center justify-center text-center">
@@ -256,17 +255,12 @@
                     <div id="hero-shows-track" class="transition-transform duration-700 ease-in-out w-full flex flex-col">
                         <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
                             <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
-                                <span class="text-red-600 font-black">18 ABR</span> • FESTIVAL FLORECE CAGUAS • <span class="text-red-600 font-black">4PM</span>
-                            </span>
-                        </div>
-                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
-                            <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
-                                <span class="text-red-600 font-black">18 ABR</span> • LA PROPUESTA CAMUY • <span class="text-red-600 font-black">9PM</span>
-                            </span>
-                        </div>
-                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
-                            <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
                                 <span class="text-red-600 font-black">26 ABR</span> • BREW AGUADILLA • <span class="text-red-600 font-black">4PM</span>
+                            </span>
+                        </div>
+                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
+                            <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                                <span class="text-red-600 font-black">02 MAY</span> • ROCK OUT MANATÍ • <span class="text-red-600 font-black">9PM</span>
                             </span>
                         </div>
                     </div>
@@ -295,8 +289,7 @@
             <div class="md:w-1/2" data-aos="fade-right">
                 <h2 class="text-5xl md:text-6xl font-black mb-8 uppercase italic text-red-600 tracking-tighter">Quiénes Somos</h2>
                 <div class="text-lg md:text-xl font-bold leading-relaxed space-y-6 text-gray-300 text-justify">
-                    <p class="border-l-4 border-white pl-4">Para Carlos, la idea de crear un proyecto musical con una vocalista femenina al frente no era un simple deseo, sino una espina creativa que llevaba más de 20 años esperando su momento. En julio de 2023, sin buscar nada en particular, mientras navegaba por Facebook, apareció un live desde Manatí: una chica cantando en karaoke un tema de Iron Maiden. Bastaron unos segundos para que todo hiciera sentido. Esa era la voz.</p>
-                    <p>Movido por la intuición y sin pensarlo demasiado, Carlos decidió escribirle. Carla aceptó la invitación y, desde ese primer mensaje, el proyecto comenzó a respirar. Llegaron los ensayos, las ideas, el sonido, y en septiembre de 2023 MYŌ KILL subió por primera vez a tarima en Rock Out Café, Manatí. No fue solo un primer show; fue el inicio de algo que llevaba años esperando nacer</p>
+                    <p class="border-l-4 border-white pl-4">Para Carlos, la idea de crear un proyecto musical con una vocalista femenina al frente no era un simple deseo, sino una espina creativa que llevaba más de 20 años esperando su momento. En julio de 2023, MYŌ KILL subió por primera vez a tarima en Rock Out Café, Manatí. Fue el inicio de algo que llevaba años esperando nacer.</p>
                     <p class="italic text-white">Rock pa’ los que lo viven y los que lo descubren.</p>
                     
                     <div class="mt-8">
@@ -413,13 +406,13 @@
                     </div>
                     <span class="font-black uppercase tracking-widest text-sm text-black">Apple Music</span>
                 </a>
-                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="400">
+                <a href="https://open.spotify.com/artist/5X8XvD5y1L6XQ9m6Z6vW6u" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="400">
                     <div class="w-24 h-24 md:w-32 md:h-32 bg-black text-white flex items-center justify-center border-4 border-black group-hover:bg-[#1DB954] group-hover:border-[#1DB954] transition-colors duration-300 rounded-none shadow-[8px_8px_0px_var(--punk-red)]">
                         <i class="fa-brands fa-spotify text-5xl md:text-6xl"></i>
                     </div>
                     <span class="font-black uppercase tracking-widest text-sm text-black">Spotify</span>
                 </a>
-                <a href="https://music.amazon.com/albums/B0GSSKN2GR?ref=dm_sh_2mddYoIbB3qisVUxypXNrMlzx" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="500">
+                <a href="https://music.amazon.com/albums/B0GSSKN2GR" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="500">
                     <div class="w-24 h-24 md:w-32 md:h-32 bg-black text-white flex items-center justify-center border-4 border-black group-hover:bg-[#00A8E1] group-hover:border-[#00A8E1] transition-colors duration-300 rounded-none shadow-[8px_8px_0px_var(--punk-red)]">
                         <i class="fa-brands fa-amazon text-5xl md:text-6xl"></i>
                     </div>
@@ -487,9 +480,9 @@
                 <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=YOf06F2rRcaQhxeUMNUmRw" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://open.spotify.com/artist/5X8XvD5y1L6XQ9m6Z6vW6u" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-spotify"></i></a>
                 <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-apple"></i></a>
-                <a href="https://music.amazon.com/albums/B0GSSKN2GR?ref=dm_sh_2mddYoIbB3qisVUxypXNrMlzx" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-amazon"></i></a>
+                <a href="https://music.amazon.com/albums/B0GSSKN2GR" target="_blank" class="hover:text-red-600 transition duration-300 transform hover:scale-125"><i class="fa-brands fa-amazon"></i></a>
             </div>
             
             <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-gray-500 text-center">
@@ -500,16 +493,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicializar animaciones AOS
         AOS.init({
             duration: 800,
             once: true,
             offset: 100
         });
 
-        // =========================================================
-        // LÓGICA DEL CARRUSEL VERTICAL HERO
-        // =========================================================
+        /* HERO VERTICAL CAROUSEL LOGIC */
         const heroShowsTrack = document.getElementById('hero-shows-track');
         if (heroShowsTrack && heroShowsTrack.children.length > 0) {
             const totalHeroSlides = heroShowsTrack.children.length;
@@ -522,9 +512,7 @@
             }, 3500); 
         }
 
-        // =========================================================
-        // LÓGICA DE CONTROL DEL EP PROMO (HOVER/TOUCH PERFECTO)
-        // =========================================================
+        /* EP PROMO CONTROL LOGIC */
         const epPromo = document.getElementById('ep-promo');
         const epOverlay = document.querySelector('.ep-overlay-box');
 
@@ -558,9 +546,7 @@
             });
         }
 
-        // =========================================================
-        // Formateador de Teléfono Automático (***-***-****)
-        // =========================================================
+        /* AUTO PHONE FORMATTER */
         const phoneInput = document.getElementById('phone-input');
         if (phoneInput) {
             phoneInput.addEventListener('input', function (e) {
@@ -569,49 +555,23 @@
             });
         }
 
-        // =========================================================
-        // Reproductor Secuencial (Con nombres exactos de GitHub)
-        // =========================================================
+        /* SEQUENTIAL AUDIO PLAYER */
         const audio = document.getElementById('bg-audio');
-        
-        const playlist = [
-            'capricho.mp3', 
-            'gata.mp3', 
-            'pepe_ganga.mp3', 
-            'ballad_of_wiwi.mp3'
-        ];
-        
+        const playlist = ['capricho.mp3', 'gata.mp3', 'pepe_ganga.mp3', 'ballad_of_wiwi.mp3'];
         let currentTrackIndex = 0;
 
         function playNext() {
             currentTrackIndex++;
-            if (currentTrackIndex >= playlist.length) {
-                currentTrackIndex = 0; 
-            }
-            
+            if (currentTrackIndex >= playlist.length) currentTrackIndex = 0;
             audio.src = playlist[currentTrackIndex];
             audio.load();
-            
-            let playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    console.log("El navegador pausó la reproducción. Esperando clic del usuario.");
-                    const musicBtn = document.getElementById('music-toggle');
-                    if(musicBtn){
-                        musicBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
-                        musicBtn.classList.remove('text-red-600');
-                    }
-                });
-            }
+            audio.play().catch(() => {});
         }
 
         if (audio) {
             audio.volume = 0.25;
-            audio.loop = false; 
-            
             audio.src = playlist[currentTrackIndex];
             audio.load();
-
             audio.addEventListener('ended', playNext);
             audio.addEventListener('error', playNext);
         }
@@ -631,9 +591,7 @@
             });
         }
 
-        // =========================================================
-        // Lógica del Menú Móvil
-        // =========================================================
+        /* MOBILE MENU LOGIC */
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const links = document.querySelectorAll('.mobile-link');
@@ -642,15 +600,9 @@
             btn.addEventListener('click', () => {
                 menu.classList.toggle('hidden-menu');
                 const icon = btn.querySelector('i');
-                if (menu.classList.contains('hidden-menu')) {
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                } else {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark');
-                }
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-xmark');
             });
-
             links.forEach(link => {
                 link.addEventListener('click', () => {
                     menu.classList.add('hidden-menu');
@@ -660,42 +612,32 @@
             });
         }
 
-        // =========================================================
-        // Lógica del Formulario de Contacto (Formspree AJAX)
-        // =========================================================
+        /* FORMSPREE AJAX LOGIC */
         const form = document.getElementById('contact-form');
         if (form) {
             form.addEventListener('submit', async function(e) {
                 e.preventDefault(); 
                 const btn = form.querySelector('button[type="submit"]');
                 const originalText = btn.innerHTML;
-                
                 btn.innerHTML = 'ENVIANDO... <i class="fa-solid fa-spinner fa-spin ml-3"></i>';
-                btn.classList.remove('bg-[#E53E3E]');
-                btn.classList.add('bg-gray-600');
                 btn.disabled = true;
 
                 try {
                     const response = await fetch(form.action, {
                         method: form.method,
                         body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: { 'Accept': 'application/json' }
                     });
-                    
                     if (response.ok) {
                         alert("¡Gracias por su solicitud, nos estaremos comunicando pronto!");
                         form.reset(); 
                     } else {
-                        alert("Hubo un error al enviar tu solicitud. Inténtalo de nuevo.");
+                        alert("Hubo un error al enviar tu solicitud.");
                     }
                 } catch (error) {
-                    alert("Hubo un error de conexión. Verifica tu internet e inténtalo de nuevo.");
+                    alert("Error de conexión.");
                 } finally {
                     btn.innerHTML = originalText;
-                    btn.classList.remove('bg-gray-600');
-                    btn.classList.add('bg-[#E53E3E]');
                     btn.disabled = false;
                 }
             });
