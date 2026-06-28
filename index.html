@@ -249,27 +249,53 @@
                 </p>
             </div>
 
+            <!-- INTERACTIVE TICKER UPDATE -->
             <div data-aos="fade-up" data-aos-delay="250" class="mb-10 w-full max-w-lg mx-auto flex flex-col items-center">
                 <h3 class="text-3xl md:text-4xl font-black uppercase text-red-600 tracking-widest mb-1 drop-shadow-[3px_3px_0px_rgba(0,0,0,1)]">Próximos Shows</h3>
                 <p class="text-xs md:text-sm font-bold text-gray-600 uppercase tracking-widest mb-4">¡Visita nuestras redes para más información!</p>
                 
-                <div class="w-full bg-white/50 border border-black/10 h-16 md:h-20 overflow-hidden relative flex items-start justify-center shadow-sm">
+                <div class="relative w-full bg-white/50 border border-black/10 h-16 md:h-20 overflow-hidden flex items-start justify-center shadow-sm" id="ticker-container">
                     <div id="hero-shows-track" class="transition-transform duration-700 ease-in-out w-full flex flex-col">
-                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
-                            <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
-                                <span class="text-red-600 font-black">19 JUN</span> • LUNA LLENA BAR AND GRILL CABO ROJO • <span class="text-red-600 font-black">9PM</span>
+                        <!-- Slide 1 -->
+                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-4 pr-10">
+                            <span class="text-xs md:text-sm font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                                <span class="text-red-600 font-black">11 JUL</span> • HANDLEBAR SAN JUAN • <span class="text-red-600 font-black">9PM</span>
                             </span>
                         </div>
-                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
-                            <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
-                                <span class="text-red-600 font-black">20 JUN</span> • LONGBRANCH SERIES BAHÍA DE AGUADILLA • <span class="text-red-600 font-black">9PM</span>
+                        <!-- Slide 2 -->
+                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-4 pr-10">
+                            <span class="text-xs md:text-sm font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                                <span class="text-red-600 font-black">18 JUL</span> • LA CENTRAL ISABELA • <span class="text-red-600 font-black">9PM</span>
                             </span>
                         </div>
-                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-2">
-                            <span class="text-xs md:text-base font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
-                                <span class="text-red-600 font-black">27 JUN</span> • JUKEO LOUNGE AGUADILLA • <span class="text-red-600 font-black">9PM</span>
+                        <!-- Slide 3 -->
+                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-4 pr-10">
+                            <span class="text-xs md:text-sm font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                                <span class="text-red-600 font-black">19 JUL</span> • SAL DE MAR AGUADILLA • <span class="text-red-600 font-black">6PM</span>
                             </span>
                         </div>
+                        <!-- Slide 4 -->
+                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-4 pr-10">
+                            <span class="text-xs md:text-sm font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                                <span class="text-red-600 font-black">25 JUL</span> • CASTILLO LABADIE MOCA (VOLKY FEST) • <span class="text-red-600 font-black">8PM</span>
+                            </span>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="h-16 md:h-20 w-full flex items-center justify-center flex-shrink-0 text-center px-4 pr-10">
+                            <span class="text-xs md:text-sm font-bold text-black tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                                <span class="text-red-600 font-black">31 JUL</span> • TODO POR UN CAFÉ QUEBRADILLAS • <span class="text-red-600 font-black">9PM</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Ticker Navigation Controls -->
+                    <div class="absolute right-0 top-0 h-full flex flex-col justify-center px-2 bg-gray-100 border-l-2 border-black z-10">
+                        <button id="ticker-prev" class="text-black hover:text-red-600 transition leading-none pb-1 focus:outline-none" title="Anterior">
+                            <i class="fa-solid fa-caret-up text-xl"></i>
+                        </button>
+                        <button id="ticker-next" class="text-black hover:text-red-600 transition leading-none pt-1 focus:outline-none" title="Próximo">
+                            <i class="fa-solid fa-caret-down text-xl"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -507,17 +533,61 @@
             offset: 100
         });
 
-        /* HERO VERTICAL CAROUSEL LOGIC */
+        /* HERO VERTICAL CAROUSEL LOGIC WITH INTERACTIVITY */
         const heroShowsTrack = document.getElementById('hero-shows-track');
+        const tickerContainer = document.getElementById('ticker-container');
+        const btnPrev = document.getElementById('ticker-prev');
+        const btnNext = document.getElementById('ticker-next');
+
         if (heroShowsTrack && heroShowsTrack.children.length > 0) {
             const totalHeroSlides = heroShowsTrack.children.length;
             let currentHeroSlide = 0;
+            let tickerInterval;
             
-            setInterval(() => {
-                currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
+            function updateTicker() {
                 const percentage = (currentHeroSlide * 100) / totalHeroSlides;
                 heroShowsTrack.style.transform = `translateY(-${percentage}%)`;
-            }, 3500); 
+            }
+
+            function nextSlide() {
+                currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
+                updateTicker();
+            }
+
+            function prevSlide() {
+                currentHeroSlide = (currentHeroSlide - 1 + totalHeroSlides) % totalHeroSlides;
+                updateTicker();
+            }
+
+            function startTicker() {
+                tickerInterval = setInterval(nextSlide, 3500);
+            }
+
+            function resetTicker() {
+                clearInterval(tickerInterval);
+                startTicker();
+            }
+
+            if(btnNext && btnPrev) {
+                btnNext.addEventListener('click', () => {
+                    nextSlide();
+                    resetTicker();
+                });
+                
+                btnPrev.addEventListener('click', () => {
+                    prevSlide();
+                    resetTicker();
+                });
+                
+                /* Pause auto-scroll on hover/touch to read comfortably */
+                tickerContainer.addEventListener('mouseenter', () => clearInterval(tickerInterval));
+                tickerContainer.addEventListener('mouseleave', startTicker);
+                tickerContainer.addEventListener('touchstart', () => clearInterval(tickerInterval));
+                tickerContainer.addEventListener('touchend', startTicker);
+            }
+
+            /* Start initial loop */
+            startTicker(); 
         }
 
         /* EP PROMO CONTROL LOGIC */
