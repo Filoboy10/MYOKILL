@@ -80,14 +80,12 @@
         }
 
         .flyer-card {
-            background: #f4f1ea; /* Papel tipo xerox/reciclado */
+            background: #f4f1ea; 
             padding: 10px 10px 22px 10px;
-            /* Bordes irregulares simulando papel rasgado de cartel de calle */
             clip-path: polygon(0% 1%, 99% 0%, 98% 99%, 1% 100%, 0% 40%);
             border: 1px solid #dcd7ce;
         }
 
-        /* Efecto de engrudo (humedad de harina y agua en los bordes) */
         .flyer-card::after {
             content: '';
             position: absolute;
@@ -103,7 +101,6 @@
             transition: all 0.4s ease;
         }
 
-        /* Scattered Placements (Flyers pegados a la mala) */
         .scatter-1 { transform: rotate(-5deg) translate(-5px, 10px); }
         .scatter-2 { transform: rotate(4deg) translate(8px, -5px); }
         .scatter-3 { transform: rotate(-3deg) translate(-2px, 15px); }
@@ -118,18 +115,6 @@
 
         .flyer-wrapper:hover .flyer-card img {
             filter: grayscale(0%) contrast(1);
-        }
-
-        /* GRAFFITI STYLES */
-        .graffiti-spray {
-            filter: grayscale(100%) brightness(0) blur(0.6px) drop-shadow(2px 8px 4px rgba(0,0,0,0.4));
-            opacity: 0.9;
-        }
-        .graffiti-drip {
-            background-color: #111;
-            border-radius: 0 0 6px 6px;
-            filter: blur(0.5px);
-            opacity: 0.9;
         }
         /* --- END CREW STYLES --- */
 
@@ -148,7 +133,6 @@
             50% { transform: translateY(-15px) rotate(2deg); }
         }
 
-        /* VINYL RECORD ANIMATION */
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -410,18 +394,6 @@
     <!-- GRUNGE / WHEATPASTE FLYER CREW SECTION -->
     <section id="banda" class="py-24 border-y-4 border-black relative grunge-bg overflow-hidden">
         
-        <!-- Graffiti Logo Element on Exposed Brick Area (Top-Right / Background) -->
-        <div class="absolute top-8 right-6 md:top-12 md:right-16 z-0 opacity-90 rotate-[-4deg] pointer-events-none mix-blend-multiply">
-            <div class="relative">
-                <img src="MYO_LOGO_T.png" alt="MYŌ KILL Graffiti" class="w-48 md:w-72 graffiti-spray">
-                <!-- Paint Drips -->
-                <div class="absolute top-[82%] left-[20%] w-[3px] h-[50px] graffiti-drip"></div>
-                <div class="absolute top-[90%] left-[45%] w-[4px] h-[85px] graffiti-drip"></div>
-                <div class="absolute top-[78%] left-[70%] w-[3px] h-[40px] graffiti-drip"></div>
-                <div class="absolute top-[85%] left-[88%] w-[2px] h-[30px] graffiti-drip"></div>
-            </div>
-        </div>
-
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-24" data-aos="fade-up">
                 <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic text-black section-title drop-shadow-[2px_2px_0px_rgba(255,255,255,0.9)]">El Crew</h2>
@@ -718,3 +690,4 @@
     </script>
 </body>
 </html>
+
