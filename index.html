@@ -64,7 +64,7 @@
             box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
         }
 
-        /* --- CREW SECTION STYLES WITH CREWBGND.PNG --- */
+        /* --- CREW SECTION STYLES (WHEATPASTE FLYER STYLE) --- */
         .grunge-bg {
             background-color: #e0e0e0;
             background-image: url('CREWBGND.png');
@@ -72,75 +72,64 @@
             background-position: center;
         }
 
-        .polaroid-wrapper {
+        .flyer-wrapper {
             position: relative;
-            filter: drop-shadow(8px 12px 10px rgba(0,0,0,0.6));
+            filter: drop-shadow(4px 6px 12px rgba(0,0,0,0.7));
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 10;
         }
 
-        .polaroid-card {
-            background: #f4f4f0; 
-            padding: 12px 12px 25px 12px;
-            clip-path: polygon(1% 0%, 99% 1%, 100% 98%, 2% 99%, 0% 50%);
+        .flyer-card {
+            background: #f4f1ea; /* Papel tipo xerox/reciclado */
+            padding: 10px 10px 22px 10px;
+            /* Bordes irregulares simulando papel rasgado de cartel de calle */
+            clip-path: polygon(0% 1%, 99% 0%, 98% 99%, 1% 100%, 0% 40%);
+            border: 1px solid #dcd7ce;
         }
 
-        .polaroid-card img {
+        /* Efecto de engrudo (humedad de harina y agua en los bordes) */
+        .flyer-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 15px rgba(80, 60, 40, 0.25);
+            pointer-events: none;
+        }
+
+        .flyer-card img {
             width: 100%;
             border: 2px solid var(--punk-black);
-            filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.3);
             transition: all 0.4s ease;
         }
 
-        /* Tape overlay */
-        .tape {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            width: 80px;
-            height: 35px;
-            background-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            backdrop-filter: blur(3px);
-            z-index: 20;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
+        /* Scattered Placements (Flyers pegados a la mala) */
+        .scatter-1 { transform: rotate(-5deg) translate(-5px, 10px); }
+        .scatter-2 { transform: rotate(4deg) translate(8px, -5px); }
+        .scatter-3 { transform: rotate(-3deg) translate(-2px, 15px); }
+        .scatter-4 { transform: rotate(6deg) translate(5px, 2px); }
+        .scatter-5 { transform: rotate(-4deg) translate(10px, -8px); }
 
-        .tape-1 { transform: translateX(-50%) rotate(-4deg); clip-path: polygon(2% 10%, 98% 0%, 100% 90%, 0% 100%); }
-        .tape-2 { transform: translateX(-50%) rotate(6deg); clip-path: polygon(0% 0%, 100% 5%, 95% 95%, 5% 100%); }
-        .tape-3 { transform: translateX(-50%) rotate(-2deg); clip-path: polygon(5% 5%, 95% 0%, 100% 100%, 0% 95%); }
-
-        .scatter-1 { transform: rotate(-7deg) translate(-10px, 15px); }
-        .scatter-2 { transform: rotate(5deg) translate(10px, -5px); }
-        .scatter-3 { transform: rotate(-6deg) translate(0px, 20px); }
-        .scatter-4 { transform: rotate(8deg) translate(-5px, 5px); }
-        .scatter-5 { transform: rotate(-4deg) translate(15px, -10px); }
-
-        .polaroid-wrapper:hover {
+        .flyer-wrapper:hover {
             transform: scale(1.12) rotate(0deg) translate(0, 0) !important;
-            filter: drop-shadow(15px 25px 20px rgba(0,0,0,0.8));
+            filter: drop-shadow(12px 20px 25px rgba(0,0,0,0.9));
             z-index: 30;
         }
 
-        .polaroid-wrapper:hover .polaroid-card img {
+        .flyer-wrapper:hover .flyer-card img {
             filter: grayscale(0%) contrast(1);
-        }
-
-        .polaroid-wrapper:hover .tape {
-            opacity: 0.2; 
         }
 
         /* GRAFFITI STYLES */
         .graffiti-spray {
-            filter: grayscale(100%) brightness(0) blur(0.5px) drop-shadow(0px 5px 2px rgba(0,0,0,0.2));
-            opacity: 0.85;
+            filter: grayscale(100%) brightness(0) blur(0.6px) drop-shadow(2px 8px 4px rgba(0,0,0,0.4));
+            opacity: 0.9;
         }
         .graffiti-drip {
-            background-color: #000;
-            border-radius: 0 0 4px 4px;
+            background-color: #111;
+            border-radius: 0 0 6px 6px;
             filter: blur(0.5px);
-            opacity: 0.85;
+            opacity: 0.9;
         }
         /* --- END CREW STYLES --- */
 
@@ -418,34 +407,33 @@
         </div>
     </section>
 
-    <!-- GRUNGE / DISTRESSED CREW SECTION WITH CREWBGND.PNG -->
+    <!-- GRUNGE / WHEATPASTE FLYER CREW SECTION -->
     <section id="banda" class="py-24 border-y-4 border-black relative grunge-bg overflow-hidden">
         
-        <!-- Graffiti Logo Element on Exposed Brick Area -->
-        <div class="absolute bottom-4 right-4 md:bottom-12 md:right-12 z-0 opacity-85 rotate-[-3deg] pointer-events-none mix-blend-multiply">
+        <!-- Graffiti Logo Element on Exposed Brick Area (Top-Right / Background) -->
+        <div class="absolute top-8 right-6 md:top-12 md:right-16 z-0 opacity-90 rotate-[-4deg] pointer-events-none mix-blend-multiply">
             <div class="relative">
-                <img src="MYO_LOGO_T.png" alt="MYŌ KILL Graffiti" class="w-56 md:w-80 graffiti-spray">
+                <img src="MYO_LOGO_T.png" alt="MYŌ KILL Graffiti" class="w-48 md:w-72 graffiti-spray">
                 <!-- Paint Drips -->
-                <div class="absolute top-[80%] left-[18%] w-[2px] h-[40px] graffiti-drip"></div>
-                <div class="absolute top-[88%] left-[35%] w-[3px] h-[65px] graffiti-drip"></div>
-                <div class="absolute top-[75%] left-[58%] w-[2px] h-[30px] graffiti-drip"></div>
-                <div class="absolute top-[92%] left-[78%] w-[4px] h-[50px] graffiti-drip"></div>
-                <div class="absolute top-[85%] left-[88%] w-[2px] h-[20px] graffiti-drip"></div>
+                <div class="absolute top-[82%] left-[20%] w-[3px] h-[50px] graffiti-drip"></div>
+                <div class="absolute top-[90%] left-[45%] w-[4px] h-[85px] graffiti-drip"></div>
+                <div class="absolute top-[78%] left-[70%] w-[3px] h-[40px] graffiti-drip"></div>
+                <div class="absolute top-[85%] left-[88%] w-[2px] h-[30px] graffiti-drip"></div>
             </div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-24" data-aos="fade-up">
-                <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic text-black section-title drop-shadow-[2px_2px_0px_rgba(255,255,255,0.8)]">El Crew</h2>
+                <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic text-black section-title drop-shadow-[2px_2px_0px_rgba(255,255,255,0.9)]">El Crew</h2>
                 <div class="flex justify-center gap-4 text-red-600 text-2xl font-black japanese-text mt-4"><span>ミョー</span><span>•</span><span>キル</span></div>
             </div>
 
+            <!-- Wheatpaste Flyers Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-16 mt-8">
                 
                 <!-- CARLA -->
-                <div class="polaroid-wrapper scatter-1" data-aos="fade-up">
-                    <div class="tape tape-1"></div>
-                    <div class="text-center group flex flex-col items-center polaroid-card">
+                <div class="flyer-wrapper scatter-1" data-aos="fade-up">
+                    <div class="text-center group flex flex-col items-center flyer-card">
                         <div class="w-full aspect-square mx-auto mb-4 overflow-hidden relative">
                             <img src="Carla.jpg" alt="Carla">
                         </div>
@@ -455,9 +443,8 @@
                 </div>
 
                 <!-- CARLOS -->
-                <div class="polaroid-wrapper scatter-2" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tape tape-2"></div>
-                    <div class="text-center group flex flex-col items-center polaroid-card">
+                <div class="flyer-wrapper scatter-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center group flex flex-col items-center flyer-card">
                         <div class="w-full aspect-square mx-auto mb-4 overflow-hidden relative">
                              <img src="Carlos.jpg" alt="Carlos">
                         </div>
@@ -467,9 +454,8 @@
                 </div>
 
                 <!-- WALDY -->
-                <div class="polaroid-wrapper scatter-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tape tape-3"></div>
-                    <div class="text-center group flex flex-col items-center polaroid-card">
+                <div class="flyer-wrapper scatter-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center group flex flex-col items-center flyer-card">
                         <div class="w-full aspect-square mx-auto mb-4 overflow-hidden relative">
                             <img src="Waldy.jpg" alt="Waldy">
                         </div>
@@ -479,9 +465,8 @@
                 </div>
 
                 <!-- JAVY -->
-                <div class="polaroid-wrapper scatter-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tape tape-1"></div>
-                    <div class="text-center group flex flex-col items-center polaroid-card">
+                <div class="flyer-wrapper scatter-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center group flex flex-col items-center flyer-card">
                         <div class="w-full aspect-square mx-auto mb-4 overflow-hidden relative">
                             <img src="Javy.JPG" alt="Javy">
                         </div>
@@ -491,9 +476,8 @@
                 </div>
 
                 <!-- ERI -->
-                <div class="polaroid-wrapper col-span-2 md:col-span-1 lg:col-span-1 scatter-5" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tape tape-2"></div>
-                    <div class="text-center group flex flex-col items-center polaroid-card">
+                <div class="flyer-wrapper col-span-2 md:col-span-1 lg:col-span-1 scatter-5" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center group flex flex-col items-center flyer-card">
                         <div class="w-1/2 md:w-full aspect-square mx-auto mb-4 overflow-hidden relative">
                              <img src="eri.jpg" alt="Eri" onerror="this.src='https://via.placeholder.com/300x300?text=Eri+Drums'">
                         </div>
