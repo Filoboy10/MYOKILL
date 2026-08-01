@@ -21,7 +21,7 @@
         :root {
             --punk-red: #E53E3E;
             --punk-black: #111111;
-            --punk-white: #FFFFFF;
+            --punk-white: #fcfcfc; /* Ligeramente gris para que el ruido se vea mejor */
         }
 
         body {
@@ -29,8 +29,8 @@
             background-color: var(--punk-white);
             color: var(--punk-black);
             overflow-x: hidden;
-            /* STATIC NOISE TEXTURE FOR GENERAL BACKGROUND */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            /* STATIC NOISE TEXTURE 100% CROSS-BROWSER */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
         }
 
         .japanese-text {
@@ -44,7 +44,7 @@
         }
 
         .hero-gradient {
-            background: radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, rgba(226,226,226,0.9) 100%);
+            background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(220,220,220,0.9) 100%);
         }
 
         .btn-punk {
@@ -67,25 +67,24 @@
         /* --- NEW GRUNGE CREW SECTION STYLES --- */
         .grunge-bg {
             background-color: #111;
+            /* Top and bottom shadow + Grunge Wood/Metal Texture */
             background-image: 
-                radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.85) 100%),
-                url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000&auto=format&fit=crop');
+                linear-gradient(to bottom, rgba(17,17,17,1) 0%, rgba(17,17,17,0.5) 15%, rgba(17,17,17,0.5) 85%, rgba(17,17,17,1) 100%),
+                url('https://images.unsplash.com/photo-1468581264429-ea1b4d1b61b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-blend-mode: multiply;
         }
 
         .polaroid-wrapper {
             position: relative;
-            /* Use filter for shadow because clip-path cuts off box-shadows */
-            filter: drop-shadow(8px 12px 10px rgba(0,0,0,0.7));
+            filter: drop-shadow(8px 12px 10px rgba(0,0,0,0.8));
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1;
         }
 
         .polaroid-card {
-            background: #f4f4f0; /* Slightly aged/dirty paper color */
+            background: #f4f4f0; 
             padding: 12px 12px 25px 12px;
             /* Distressed/irregular edges */
             clip-path: polygon(1% 0%, 99% 1%, 100% 98%, 2% 99%, 0% 50%);
@@ -98,7 +97,7 @@
             transition: all 0.4s ease;
         }
 
-        /* Tape overlay for that "stuck on" look */
+        /* Tape overlay */
         .tape {
             position: absolute;
             top: -15px;
@@ -113,19 +112,16 @@
             transition: opacity 0.3s ease;
         }
 
-        /* Irregular tape cuts */
         .tape-1 { transform: translateX(-50%) rotate(-4deg); clip-path: polygon(2% 10%, 98% 0%, 100% 90%, 0% 100%); }
         .tape-2 { transform: translateX(-50%) rotate(6deg); clip-path: polygon(0% 0%, 100% 5%, 95% 95%, 5% 100%); }
         .tape-3 { transform: translateX(-50%) rotate(-2deg); clip-path: polygon(5% 5%, 95% 0%, 100% 100%, 0% 95%); }
 
-        /* Scattered Placements */
         .scatter-1 { transform: rotate(-7deg) translate(-10px, 15px); }
         .scatter-2 { transform: rotate(5deg) translate(10px, -5px); }
         .scatter-3 { transform: rotate(-6deg) translate(0px, 20px); }
         .scatter-4 { transform: rotate(8deg) translate(-5px, 5px); }
         .scatter-5 { transform: rotate(-4deg) translate(15px, -10px); }
 
-        /* Hover Interaction */
         .polaroid-wrapper:hover {
             transform: scale(1.12) rotate(0deg) translate(0, 0) !important;
             filter: drop-shadow(15px 25px 20px rgba(0,0,0,0.9));
@@ -137,7 +133,7 @@
         }
 
         .polaroid-wrapper:hover .tape {
-            opacity: 0.2; /* Fade out tape slightly when focused */
+            opacity: 0.2; 
         }
         /* --- END CREW STYLES --- */
 
@@ -328,6 +324,7 @@
                 </p>
             </div>
 
+            <!-- INTERACTIVE TICKER UPDATE AGOSTO -->
             <div data-aos="fade-up" data-aos-delay="250" class="mb-10 w-full max-w-lg mx-auto flex flex-col items-center">
                 <h3 class="text-3xl md:text-4xl font-black uppercase text-red-600 tracking-widest mb-1 drop-shadow-[3px_3px_0px_rgba(0,0,0,1)]">Próximos Shows</h3>
                 <p class="text-xs md:text-sm font-bold text-gray-600 uppercase tracking-widest mb-4">¡Visita nuestras redes para más información!</p>
@@ -436,7 +433,6 @@
     <section id="banda" class="py-24 border-y-4 border-black relative grunge-bg">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-24" data-aos="fade-up">
-                <!-- Cambiado el titulo a blanco para resaltar en el fondo oscuro -->
                 <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic text-white section-title-white">El Crew</h2>
                 <div class="flex justify-center gap-4 text-red-600 text-2xl font-black japanese-text mt-4"><span>ミョー</span><span>•</span><span>キル</span></div>
             </div>
