@@ -237,7 +237,7 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH ORIGINAL BACKGROUND AND FORCED AUTOPLAY VIDEO -->
+    <!-- HERO SECTION WITH ORIGINAL BACKGROUND AND MP4 VIDEO PROTAGONIST -->
     <section id="inicio" class="min-h-screen flex flex-col items-center justify-center pt-28 hero-gradient relative overflow-hidden pb-12">
         <div class="absolute top-0 left-0 w-full h-full opacity-[0.05] pointer-events-none select-none overflow-hidden" aria-hidden="true">
             <div class="absolute -top-10 -left-10 text-[10rem] md:text-[20rem] font-black japanese-text text-gray-400">ミョー</div>
@@ -251,12 +251,11 @@
                 <img src="MYO_LOGO_T.png" alt="MYŌ KILL Official Logo" class="w-64 md:w-96 h-auto mx-auto floating-logo object-contain">
             </div>
             
-            <!-- 2. VIDEO PROTAGONIST PLACED BETWEEN LOGO AND EP COVER -->
+            <!-- 2. MP4 VIDEO PROTAGONIST PLACED BETWEEN LOGO AND EP COVER -->
             <div data-aos="fade-up" data-aos-delay="50" class="mb-6 w-full max-w-md mx-auto px-2">
                 <div class="relative w-full aspect-video overflow-hidden border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] bg-black">
-                    <video id="hero-video" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
-                        <source src="MYŌ_KILL_VID.MOV" type="video/quicktime">
-                        <source src="MYŌ_KILL_VID.MOV" type="video/mp4">
+                    <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
+                        <source src="MYO_KILL_VID.mp4" type="video/mp4">
                         Tu navegador no soporta videos HTML5.
                     </video>
                 </div>
@@ -607,16 +606,6 @@
 
             startTicker(); 
         }
-
-        /* FORCE VIDEO PLAY PROGRAMMATICALLY */
-        window.addEventListener('DOMContentLoaded', () => {
-            const heroVideo = document.getElementById('hero-video');
-            if (heroVideo) {
-                heroVideo.play().catch(error => {
-                    console.log("Autoplay prevented or video loading issue:", error);
-                });
-            }
-        });
 
         /* EP PROMO CONTROL LOGIC */
         const epPromo = document.getElementById('ep-promo');
