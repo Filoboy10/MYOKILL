@@ -6,29 +6,29 @@
     <meta name="description" content="MYŌ KILL - Banda de Bubblegum Punk, Grunge y Covers. Shows en vivo para venues, eventos privados y festivales.">
     <title>MYŌ KILL | Bubblegum Punk & Grunge</title>
     
-    <link rel="icon" type="image/png" href="MYO_LOGO_T.png">
+    <link rel="icon" type="image/png" href="Logo_White.png">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;700;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Montserrat & Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        :root {
-            --punk-pink: #FF007F; /* Bubblegum Pink Neón */
-            --punk-black: #0a0a0a; /* Negro Pitch Black */
-            --punk-white: #fcfcfc;
-        }
-
+        /* BUBBLEGUM PUNK STYLES */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--punk-black);
-            color: var(--punk-white);
+            background-color: #0a0a0a; /* Pitch Black */
+            color: #fcfcfc;
             overflow-x: hidden;
-            /* Textura de ruido sutil */
             background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
         }
 
@@ -36,67 +36,69 @@
             font-family: 'Noto Sans JP', sans-serif;
         }
 
+        /* Nav Solid oscuro */
         .nav-solid {
             background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 2px solid var(--punk-pink);
+            backdrop-filter: blur(5px);
+            border-bottom: 4px solid #FF007F; /* Bubblegum Pink border */
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at center, rgba(30,30,30,0.8) 0%, rgba(10,10,10,1) 100%);
-        }
-
-        /* Botón general estilo Brutalista */
+        /* Botón general estilo brutalista pink */
         .btn-punk {
-            background-color: var(--punk-pink);
+            background-color: #FF007F;
             color: white;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 3px solid var(--punk-pink);
+            border: 3px solid #fcfcfc;
             cursor: pointer;
-            border-radius: 1rem;
         }
 
         .btn-punk:hover {
-            background-color: transparent;
-            color: var(--punk-pink);
+            background-color: #111;
+            color: #FF007F;
             transform: translateY(-4px);
-            box-shadow: 6px 6px 0px rgba(255, 0, 127, 0.5);
+            box-shadow: 6px 6px 0px #FF007F;
+            border-color: #FF007F;
         }
 
         /* --- CREW SECTION STYLES --- */
-        .crew-card {
-            background: #111; 
-            padding: 15px;
-            border: 3px solid var(--punk-pink);
-            border-radius: 1.5rem;
+        .flyer-wrapper {
+            position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 8px 8px 0px rgba(255, 0, 127, 0.8);
+            z-index: 10;
         }
 
-        .crew-card img {
+        .flyer-card {
+            background: #111; 
+            padding: 12px;
+            border: 4px solid #fcfcfc;
+            border-radius: 16px; /* Bordes más redondeados */
+            box-shadow: 8px 8px 0px #FF007F;
+        }
+
+        .flyer-card img {
             width: 100%;
-            border-radius: 1rem;
-            border: 2px solid var(--punk-white);
+            border: 2px solid #fcfcfc;
+            border-radius: 8px; /* Bordes de la foto redondeados */
             filter: grayscale(100%) contrast(1.2);
             transition: all 0.4s ease;
+            object-fit: cover; /* Asegura que se llene todo el recuadro sin deformar */
         }
 
-        .crew-card:hover {
-            transform: translateY(-10px) !important;
-            box-shadow: 12px 12px 0px rgba(255, 0, 127, 1);
+        .flyer-wrapper:hover {
+            transform: scale(1.05) translateY(-10px) !important;
             z-index: 30;
         }
 
-        .crew-card:hover img {
+        .flyer-wrapper:hover .flyer-card img {
             filter: grayscale(0%) contrast(1);
         }
 
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #111; border-left: 2px solid var(--punk-pink); }
-        ::-webkit-scrollbar-thumb { background: var(--punk-pink); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #d00068; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; border-left: 2px solid #333; }
+        ::-webkit-scrollbar-thumb { background: #FF007F; border: 1px solid #0a0a0a; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff3399; }
 
         @keyframes spin {
             from { transform: rotate(0deg); }
@@ -110,21 +112,19 @@
             position: relative;
             display: inline-block;
             z-index: 10;
-            color: var(--punk-white);
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: 6px;
+            bottom: 2px;
             left: -5px;
             width: 105%;
             height: 15px;
-            background: var(--punk-pink);
+            background: #FF007F;
             z-index: -1;
             opacity: 0.8;
             transform: rotate(-1deg);
-            border-radius: 4px;
         }
 
         .hidden-menu { display: none !important; }
@@ -134,7 +134,12 @@
         }
         .social-btn:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 8px 8px 0px rgba(255,0,127,1);
+        }
+
+        .grunge-text {
+            transform: skew(-10deg) rotate(-1deg);
+            display: inline-block;
+            filter: drop-shadow(4px 4px 0px #FF007F); 
         }
 
         @keyframes wobble-ep {
@@ -148,308 +153,314 @@
         .wobble-ep-anim {
             animation: wobble-ep 4s ease-in-out infinite;
         }
+
+        /* Estilo Lista Blink-182 */
+        .show-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .show-row:hover {
+            background-color: rgba(255, 0, 127, 0.1);
+            border-bottom: 1px solid #FF007F;
+        }
+        .show-row:hover .show-text {
+            color: #FF007F;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-[#FF007F] selection:text-white">
 
-    <!-- Audio Element for background music -->
     <audio id="bg-audio"></audio>
 
-    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-white border-4 border-[#FF007F] rounded-full flex items-center justify-center shadow-[4px_4px_0px_#FF007F] hover:shadow-[2px_2px_0px_#FF007F] hover:translate-y-1 transition-all duration-300 group overflow-hidden p-0" title="Toggle Music">
-        <i id="vinyl-icon" class="fa-solid fa-compact-disc text-[2.5rem] text-black transition-colors"></i>
+    <!-- FLOATING VINYL BUTTON -->
+    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#111] border-4 border-white rounded-full flex items-center justify-center shadow-[4px_4px_0px_#FF007F] hover:shadow-[2px_2px_0px_#FF007F] hover:translate-y-1 transition-all duration-300 group overflow-hidden p-0" title="Toggle Music">
+        <i id="vinyl-icon" class="fa-solid fa-compact-disc text-[2.5rem] text-white transition-colors"></i>
     </button>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="fixed w-full z-50 nav-solid py-3 px-6 md:px-12 flex justify-between items-center">
-        <div class="text-2xl font-black tracking-tighter flex items-center gap-2 cursor-pointer text-white" onclick="window.scrollTo(0,0)">
+    <nav class="fixed w-full z-50 nav-solid py-2 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter flex items-center gap-2 cursor-pointer text-[#fcfcfc]" onclick="window.scrollTo(0,0)">
             <span>MYŌ <span class="text-[#FF007F] italic">KILL</span></span>
         </div>
         
         <div class="flex items-center gap-6">
-            <div class="hidden md:flex space-x-6 lg:space-x-8 font-bold uppercase text-xs tracking-[0.2em] lg:tracking-[0.3em] items-center">
-                <a href="#inicio" class="text-white hover:text-[#FF007F] transition relative group">Inicio<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full rounded-full"></span></a>
-                <a href="#historia" class="text-white hover:text-[#FF007F] transition relative group">Historia<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full rounded-full"></span></a>
-                <a href="#banda" class="text-white hover:text-[#FF007F] transition relative group">El Crew<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full rounded-full"></span></a>
-                <a href="#shows" class="text-white hover:text-[#FF007F] transition relative group">Shows<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full rounded-full"></span></a>
-                <a href="#booking" class="text-white hover:text-[#FF007F] transition relative group">Booking<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full rounded-full"></span></a>
+            <div class="hidden md:flex space-x-6 lg:space-x-8 font-bold uppercase text-xs tracking-[0.2em] lg:tracking-[0.3em] items-center text-[#fcfcfc]">
+                <a href="#inicio" class="hover:text-[#FF007F] transition relative group">INICIO<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full"></span></a>
+                <a href="#historia" class="hover:text-[#FF007F] transition relative group">HISTORIA<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full"></span></a>
+                <a href="#banda" class="hover:text-[#FF007F] transition relative group">EL CREW<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full"></span></a>
+                <a href="#booking" class="hover:text-[#FF007F] transition relative group">BOOKING<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#FF007F] transition-all group-hover:w-full"></span></a>
                 
-                <div class="flex space-x-5 pl-6 border-l-2 border-gray-600 text-2xl text-white">
+                <div class="flex space-x-5 pl-6 border-l-2 border-gray-600 text-2xl">
                     <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-110"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-110"><i class="fa-brands fa-spotify"></i></a>
+                    <a href="https://www.tiktok.com/@myokillpr" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-110"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
 
-            <div class="md:hidden text-2xl cursor-pointer text-white hover:text-[#FF007F] transition active:scale-90" id="mobile-menu-btn">
+            <div class="md:hidden text-2xl cursor-pointer hover:text-[#FF007F] transition active:scale-90 text-[#fcfcfc]" id="mobile-menu-btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden-menu absolute top-full left-0 w-full nav-solid border-t-2 border-[#FF007F] flex flex-col items-center py-8 space-y-6 shadow-2xl md:hidden transition-all duration-300">
-             <a href="#inicio" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] text-white hover:text-[#FF007F] transition">Inicio</a>
-             <a href="#historia" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] text-white hover:text-[#FF007F] transition">Historia</a>
-             <a href="#banda" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] text-white hover:text-[#FF007F] transition">El Crew</a>
-             <a href="#shows" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] text-white hover:text-[#FF007F] transition">Shows</a>
-             <a href="#booking" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] text-white hover:text-[#FF007F] transition">Booking</a>
+             <a href="#inicio" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-[#FF007F] transition text-[#fcfcfc]">Inicio</a>
+             <a href="#historia" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-[#FF007F] transition text-[#fcfcfc]">Historia</a>
+             <a href="#banda" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-[#FF007F] transition text-[#fcfcfc]">Banda</a>
+             <a href="#booking" class="mobile-link text-2xl font-black uppercase tracking-[0.2em] hover:text-[#FF007F] transition text-[#fcfcfc]">Booking</a>
              
-             <div class="flex space-x-6 pt-4 border-t-2 border-gray-600 w-3/4 justify-center text-3xl text-white">
+             <div class="flex space-x-6 pt-4 border-t-2 border-gray-600 w-3/4 justify-center text-3xl text-[#fcfcfc]">
                  <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-[#FF007F] transition"><i class="fa-brands fa-facebook"></i></a>
                  <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-[#FF007F] transition"><i class="fa-brands fa-instagram"></i></a>
+                 <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-[#FF007F] transition"><i class="fa-brands fa-youtube"></i></a>
                  <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="hover:text-[#FF007F] transition"><i class="fa-brands fa-spotify"></i></a>
+                 <a href="https://www.tiktok.com/@myokillpr" target="_blank" class="hover:text-[#FF007F] transition"><i class="fa-brands fa-tiktok"></i></a>
              </div>
         </div>
     </nav>
 
-    <section id="inicio" class="flex flex-col items-center justify-center pt-32 hero-gradient relative overflow-hidden pb-16">
-        <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none select-none overflow-hidden" aria-hidden="true">
-            <div class="absolute -top-10 -left-10 text-[10rem] md:text-[20rem] font-black japanese-text text-[#FF007F]">ミョー</div>
-            <div class="absolute -bottom-10 -right-10 text-[10rem] md:text-[20rem] font-black japanese-text text-[#FF007F]">キル</div>
-    </div>
-
-    <div class="container mx-auto px-6 text-center z-10 relative flex flex-col items-center">
-        
-        <!-- LOGO PRINCIPAL (BLANCO LIMPIO) -->
-        <div data-aos="zoom-in" data-aos-duration="1000" class="mb-12">
-            <img src="Logo_White.png" alt="MYŌ KILL Official Logo" class="w-72 md:w-[26rem] h-auto mx-auto object-contain drop-shadow-[0_0_10px_rgba(255,0,127,0.2)] hover:scale-105 hover:drop-shadow-[0_0_20px_rgba(255,0,127,0.6)] transition-all duration-500">
+    <section id="inicio" class="flex flex-col items-center justify-center pt-32 relative overflow-hidden pb-12">
+        <!-- Background Kanji -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none select-none overflow-hidden flex justify-between items-center px-10" aria-hidden="true">
+            <div class="text-[10rem] md:text-[20rem] font-black japanese-text text-[#FF007F]">ミョー</div>
+            <div class="text-[10rem] md:text-[20rem] font-black japanese-text text-[#FF007F]">キル</div>
         </div>
 
-        <!-- EP PROMO -->
-        <div id="ep-promo" data-aos="fade-up" data-aos-delay="100" class="mb-16 w-full max-w-sm mx-auto flex flex-col items-center">
-            <div class="relative w-4/5 aspect-square overflow-hidden bg-[#111] border-4 border-[#FF007F] rounded-3xl shadow-[8px_8px_0px_#FF007F] wobble-ep-anim mb-4">
-                    <img src="ep-cover.jpg" alt="EP Concrete Steps Cover" class="w-full h-full object-cover rounded-2xl" onerror="this.src='https://via.placeholder.com/400x400/111/FF007F?text=EP+Cover'">
+        <div class="container mx-auto px-6 text-center z-10 relative flex flex-col items-center">
+            
+            <!-- LOGO PRINCIPAL (Logo Blanco Sin Recuadro) -->
+            <div data-aos="zoom-in" data-aos-duration="1000" class="mb-10 group">
+                <img 
+                    src="Logo_White.png" 
+                    alt="MYŌ KILL Official Logo" 
+                    class="w-64 md:w-96 h-auto mx-auto object-contain drop-shadow-[0_0_1px_rgba(255,0,127,0.3)] transition-all duration-500 group-hover:drop-shadow-[0_0_15px_rgba(255,0,127,0.8)] group-hover:scale-105"
+                    onerror="this.src='https://raw.githubusercontent.com/Filoboy10/myokill_links/main/MYOKILL_LOGO.png'"
+                >
+            </div>
+
+            <!-- EP PROMO -->
+            <div id="ep-promo" data-aos="fade-up" data-aos-delay="100" class="mb-10 w-full max-w-sm mx-auto flex flex-col items-center">
+                <div class="relative w-4/5 aspect-square overflow-hidden bg-[#111] border-4 border-[#fcfcfc] rounded-2xl shadow-[8px_8px_0px_#FF007F] wobble-ep-anim mb-4">
+                    <img src="ep-cover.jpg" alt="EP Concrete Steps Cover" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/400x400/111/fff?text=Sube+ep-cover.jpg'">
                 </div>
                 
-                <div class="bg-[#FF007F] text-white px-5 py-2 flex items-center justify-center gap-3 w-4/5 mb-4 rounded-full font-black shadow-[4px_4px_0px_rgba(255,255,255,0.2)]">
+                <div class="bg-[#FF007F] text-white px-4 py-2 flex items-center justify-center gap-3 w-4/5 mb-3 rounded-full border-2 border-[#111] shadow-[3px_3px_0px_rgba(255,255,255,0.2)]">
                     <span class="animate-pulse w-2.5 h-2.5 bg-white rounded-full inline-block"></span>
-                    <span class="uppercase tracking-widest text-xs">¡NUEVO EP DISPONIBLE!</span>
+                    <span class="font-black uppercase tracking-widest text-xs">¡NUEVO EP DISPONIBLE!</span>
                 </div>
 
-                <div class="flex flex-col w-4/5 space-y-3">
-                    <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="w-full text-center bg-[#1DB954] text-white font-bold py-3 px-4 hover:-translate-y-1 transition flex items-center justify-center gap-2 rounded-2xl border-2 border-black shadow-[4px_4px_0px_rgba(255,255,255,0.8)]">
+                <!-- Always visible streaming buttons (Amazon Removed) -->
+                <div class="flex flex-col w-4/5 space-y-2">
+                    <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="w-full text-center bg-[#1DB954] text-[#111] font-black uppercase tracking-widest py-3 px-4 hover:-translate-y-1 transition flex items-center justify-center gap-2 rounded-xl border-2 border-white shadow-[4px_4px_0px_#fcfcfc]">
                         <i class="fa-brands fa-spotify text-xl"></i> Spotify
                     </a>
-                    <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="w-full text-center bg-gray-200 text-black font-black py-3 px-4 hover:-translate-y-1 transition flex items-center justify-center gap-2 rounded-2xl border-2 border-black shadow-[4px_4px_0px_#FF007F]">
+                    <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="w-full text-center bg-[#111] text-white font-black uppercase tracking-widest py-3 px-4 hover:-translate-y-1 transition flex items-center justify-center gap-2 rounded-xl border-2 border-white shadow-[4px_4px_0px_#FF007F]">
                         <i class="fa-brands fa-apple text-xl"></i> Apple Music
                     </a>
                 </div>
             </div>
-            
-            <div data-aos="fade-up" data-aos-delay="200" class="mb-16 w-full max-w-sm mx-auto px-6 py-3 bg-[#111] border-2 border-[#FF007F] shadow-[6px_6px_0px_#FF007F] rounded-xl flex items-center justify-center text-center">
-                <p class="text-sm md:text-base font-bold text-white tracking-[0.2em] uppercase">
-                    Bubblegum Punk <span class="text-[#FF007F] mx-1">•</span> Grunge
-                </p>
+
+            <!-- SOCIAL MEDIA LINKS (TikTok Added) -->
+            <div data-aos="fade-up" data-aos-delay="150" class="mb-12 flex flex-wrap justify-center gap-6 md:gap-8 text-3xl text-[#fcfcfc]">
+                <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://www.tiktok.com/@myokillpr" target="_blank" class="hover:text-[#FF007F] transition transform hover:scale-125 hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
             </div>
 
-            <!-- PRÓXIMOS SHOWS - VERTICAL LIST BLINK-182 STYLE -->
-            <div id="shows" data-aos="fade-up" data-aos-delay="250" class="w-full max-w-3xl mx-auto mb-16">
-                <div class="bg-[#111] border-4 border-[#FF007F] rounded-3xl p-6 md:p-10 shadow-[10px_10px_0px_#FF007F] text-left">
-                    <h3 class="text-3xl md:text-4xl font-black text-center text-white mb-8 tracking-widest uppercase section-title">Upcoming Shows</h3>
+            <!-- LISTA DE SHOWS ESTILO BLINK-182 -->
+            <div data-aos="fade-up" data-aos-delay="250" class="mb-16 w-full max-w-2xl mx-auto flex flex-col">
+                <h3 class="text-3xl md:text-4xl font-black uppercase text-[#fcfcfc] tracking-widest mb-6 border-b-2 border-[#FF007F] pb-2 text-left">Próximos Shows</h3>
+                
+                <div class="w-full flex flex-col bg-[#0a0a0a] border-2 border-white rounded-xl shadow-[8px_8px_0px_#FF007F] overflow-hidden text-left">
                     
-                    <div class="flex flex-col">
-                        
-                        <!-- Show Oct 9 -->
-                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-800 py-6 group hover:bg-[#1a1a1a] transition rounded-xl px-4 md:px-6">
-                            <div class="flex items-center gap-6">
-                                <div class="text-center min-w-[60px]">
-                                    <span class="block text-sm text-gray-500 font-bold uppercase tracking-widest">Oct</span>
-                                    <span class="block text-3xl font-black text-[#FF007F]">09</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg md:text-xl font-black text-white group-hover:text-[#FF007F] transition uppercase">Todo por un Café</h4>
-                                    <p class="text-xs md:text-sm text-gray-400 font-bold tracking-widest uppercase mt-1">Quebradillas</p>
-                                </div>
+                    <!-- Fila 1 -->
+                    <div class="show-row flex justify-between items-center px-4 py-5 md:px-8 md:py-6">
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <div class="text-[#FF007F] font-black text-center leading-none">
+                                <span class="block text-sm md:text-base">OCT</span>
+                                <span class="block text-2xl md:text-3xl">09</span>
                             </div>
-                            <div class="mt-4 md:mt-0 text-left md:text-right flex items-center md:justify-end w-full md:w-auto pl-[84px] md:pl-0">
-                                <span class="text-white font-black text-xl bg-[#0a0a0a] px-3 py-1 rounded-lg border border-gray-800">9 PM</span>
+                            <div class="show-text font-bold tracking-widest uppercase">
+                                <span class="block text-sm md:text-lg text-white">TODO POR UN CAFÉ</span>
+                                <span class="block text-[10px] md:text-xs text-gray-400">QUEBRADILLAS • 9:00 PM</span>
                             </div>
                         </div>
-
-                        <!-- Show Oct 11 -->
-                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-800 py-6 group hover:bg-[#1a1a1a] transition rounded-xl px-4 md:px-6">
-                            <div class="flex items-center gap-6">
-                                <div class="text-center min-w-[60px]">
-                                    <span class="block text-sm text-gray-500 font-bold uppercase tracking-widest">Oct</span>
-                                    <span class="block text-3xl font-black text-[#FF007F]">11</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg md:text-xl font-black text-white group-hover:text-[#FF007F] transition uppercase">La Grifería</h4>
-                                    <p class="text-xs md:text-sm text-gray-400 font-bold tracking-widest uppercase mt-1">Aguadilla</p>
-                                </div>
-                            </div>
-                            <div class="mt-4 md:mt-0 text-left md:text-right flex items-center md:justify-end w-full md:w-auto pl-[84px] md:pl-0">
-                                <span class="text-white font-black text-xl bg-[#0a0a0a] px-3 py-1 rounded-lg border border-gray-800">5 PM</span>
-                            </div>
-                        </div>
-
-                        <!-- Show Oct 17 -->
-                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-800 py-6 group hover:bg-[#1a1a1a] transition rounded-xl px-4 md:px-6">
-                            <div class="flex items-center gap-6">
-                                <div class="text-center min-w-[60px]">
-                                    <span class="block text-sm text-gray-500 font-bold uppercase tracking-widest">Oct</span>
-                                    <span class="block text-3xl font-black text-[#FF007F]">17</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg md:text-xl font-black text-white group-hover:text-[#FF007F] transition uppercase">Rock Out Café</h4>
-                                    <p class="text-xs md:text-sm text-gray-400 font-bold tracking-widest uppercase mt-1">Manatí</p>
-                                </div>
-                            </div>
-                            <div class="mt-4 md:mt-0 text-left md:text-right flex items-center md:justify-end w-full md:w-auto pl-[84px] md:pl-0">
-                                <span class="text-white font-black text-xl bg-[#0a0a0a] px-3 py-1 rounded-lg border border-gray-800">9 PM</span>
-                            </div>
-                        </div>
-
-                        <!-- Show Oct 23 -->
-                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-800 py-6 group hover:bg-[#1a1a1a] transition rounded-xl px-4 md:px-6">
-                            <div class="flex items-center gap-6">
-                                <div class="text-center min-w-[60px]">
-                                    <span class="block text-sm text-gray-500 font-bold uppercase tracking-widest">Oct</span>
-                                    <span class="block text-3xl font-black text-[#FF007F]">23</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg md:text-xl font-black text-white group-hover:text-[#FF007F] transition uppercase">Brasas</h4>
-                                    <p class="text-xs md:text-sm text-gray-400 font-bold tracking-widest uppercase mt-1">San Sebastián</p>
-                                </div>
-                            </div>
-                            <div class="mt-4 md:mt-0 text-left md:text-right flex items-center md:justify-end w-full md:w-auto pl-[84px] md:pl-0">
-                                <span class="text-white font-black text-xl bg-[#0a0a0a] px-3 py-1 rounded-lg border border-gray-800">9 PM</span>
-                            </div>
-                        </div>
-
-                        <!-- Show Oct 31 (Halloween) -->
-                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between py-6 group hover:bg-[#1a1a1a] transition rounded-xl px-4 md:px-6 border-l-4 border-transparent hover:border-[#FF007F]">
-                            <div class="flex items-center gap-6">
-                                <div class="text-center min-w-[60px]">
-                                    <span class="block text-sm text-gray-500 font-bold uppercase tracking-widest">Oct</span>
-                                    <span class="block text-3xl font-black text-[#e87010]">31</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg md:text-xl font-black text-[#e87010] group-hover:text-white transition uppercase">La Central <span class="ml-1 text-2xl">🎃</span></h4>
-                                    <p class="text-xs md:text-sm text-gray-400 font-bold tracking-widest uppercase mt-1">Isabela</p>
-                                </div>
-                            </div>
-                            <div class="mt-4 md:mt-0 text-left md:text-right flex items-center md:justify-end w-full md:w-auto pl-[84px] md:pl-0">
-                                <span class="text-white font-black text-xl bg-[#0a0a0a] px-3 py-1 rounded-lg border border-[#e87010] text-[#e87010]">9 PM</span>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <!-- Fila 2 -->
+                    <div class="show-row flex justify-between items-center px-4 py-5 md:px-8 md:py-6">
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <div class="text-[#FF007F] font-black text-center leading-none">
+                                <span class="block text-sm md:text-base">OCT</span>
+                                <span class="block text-2xl md:text-3xl">11</span>
+                            </div>
+                            <div class="show-text font-bold tracking-widest uppercase">
+                                <span class="block text-sm md:text-lg text-white">LA GRIFERÍA</span>
+                                <span class="block text-[10px] md:text-xs text-gray-400">AGUADILLA • 5:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3 -->
+                    <div class="show-row flex justify-between items-center px-4 py-5 md:px-8 md:py-6">
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <div class="text-[#FF007F] font-black text-center leading-none">
+                                <span class="block text-sm md:text-base">OCT</span>
+                                <span class="block text-2xl md:text-3xl">17</span>
+                            </div>
+                            <div class="show-text font-bold tracking-widest uppercase">
+                                <span class="block text-sm md:text-lg text-white">ROCK OUT CAFÉ</span>
+                                <span class="block text-[10px] md:text-xs text-gray-400">MANATÍ • 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila 4 -->
+                    <div class="show-row flex justify-between items-center px-4 py-5 md:px-8 md:py-6">
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <div class="text-[#FF007F] font-black text-center leading-none">
+                                <span class="block text-sm md:text-base">OCT</span>
+                                <span class="block text-2xl md:text-3xl">23</span>
+                            </div>
+                            <div class="show-text font-bold tracking-widest uppercase">
+                                <span class="block text-sm md:text-lg text-white">BRASAS</span>
+                                <span class="block text-[10px] md:text-xs text-gray-400">SAN SEBASTIÁN • 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila 5 -->
+                    <div class="show-row flex justify-between items-center px-4 py-5 md:px-8 md:py-6">
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <div class="text-[#FF007F] font-black text-center leading-none">
+                                <span class="block text-sm md:text-base">OCT</span>
+                                <span class="block text-2xl md:text-3xl text-orange-500">31</span>
+                            </div>
+                            <div class="show-text font-bold tracking-widest uppercase">
+                                <span class="block text-sm md:text-lg text-white">LA CENTRAL 🎃</span>
+                                <span class="block text-[10px] md:text-xs text-gray-400">ISABELA • 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
+            
         </div>
     </section>
 
-    <section id="historia" class="py-24 bg-[#0a0a0a] text-white relative border-y-4 border-[#FF007F] overflow-hidden">
-        <div class="absolute top-0 right-0 opacity-5 pointer-events-none">
-             <i class="fa-solid fa-compact-disc text-[25rem] -mr-20 -mt-20 text-[#FF007F]"></i>
+    <!-- HISTORIA SECTION -->
+    <section id="historia" class="py-24 bg-[#111] text-white relative border-y-4 border-white overflow-hidden">
+        <div class="absolute top-0 right-0 opacity-[0.03] pointer-events-none">
+             <i class="fa-solid fa-compact-disc text-[20rem] -mr-20 -mt-20"></i>
         </div>
 
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 relative z-10">
-            <div class="lg:w-1/2 w-full" data-aos="fade-right">
-                <h2 class="text-5xl md:text-7xl font-black mb-8 uppercase italic text-white tracking-tighter section-title">Quiénes Somos</h2>
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <h2 class="text-5xl md:text-6xl font-black mb-8 uppercase italic text-[#FF007F] tracking-tighter">Quiénes Somos</h2>
                 <div class="text-lg md:text-xl font-bold leading-relaxed space-y-6 text-gray-300 text-justify">
-                    <p class="border-l-4 border-[#FF007F] pl-5 bg-[#111] p-4 rounded-r-xl">Para Carlos, la idea de crear un proyecto musical con una vocalista femenina al frente no era un simple deseo, sino una espina creativa que llevaba más de 20 años esperando su momento. En julio de 2023, sin buscar nada en particular, mientras navegaba por Facebook, apareció un live desde Manatí: una chica cantando en karaoke un tema de Iron Maiden. Bastaron unos segundos para que todo hiciera sentido. Esa era la voice.</p>
-                    <p class="px-2">Movido por la intuición y sin pensarlo demasiado, Carlos decidió escribirle. Carla aceptó la invitación y, desde ese primer mensaje, el proyecto comenzó a respirar. Llegaron los ensayos, las ideas, el sonido, y en septiembre de 2023 MYŌ KILL subió por primera vez a tarima en Rock Out Café, Manatí. No fue solo un primer show; fue el inicio de algo que llevaba años esperando nacer.</p>
-                    <p class="italic text-[#FF007F] px-2 font-black text-2xl drop-shadow-[2px_2px_0px_rgba(255,255,255,0.2)]">Rock pa’ los que lo viven y los que lo descubren.</p>
+                    <p class="border-l-4 border-[#FF007F] pl-4">Para Carlos, la idea de crear un proyecto musical con una vocalista femenina al frente no era un simple deseo, sino una espina creativa que llevaba más de 20 años esperando su momento. En julio de 2023, sin buscar nada en particular, mientras navegaba por Facebook, apareció un live desde Manatí: una chica cantando en karaoke un tema de Iron Maiden. Bastaron unos segundos para que todo hiciera sentido. Esa era la voice.</p>
+                    <p>Movido por la intuición y sin pensarlo demasiado, Carlos decidió escribirle. Carla aceptó la invitación y, desde ese primer mensaje, el proyecto comenzó a respirar. Llegaron los ensayos, las ideas, el sonido, y en septiembre de 2023 MYŌ KILL subió por primera vez a tarima en Rock Out Café, Manatí. No fue solo un primer show; fue el inicio de algo que llevaba años esperando nacer.</p>
+                    <p class="italic text-[#FF007F]">Rock pa’ los que lo viven y los que lo descubren.</p>
                     
-                    <div class="mt-8 px-2">
-                        <div class="border-2 border-gray-800 bg-[#111] p-6 rounded-2xl w-full">
-                            <div class="text-lg md:text-xl text-gray-400 mb-3 font-bold flex flex-wrap items-center gap-1.5 leading-tight">
+                    <div class="mt-8">
+                        <div class="border-2 border-white rounded-xl p-6 inline-block w-full shadow-[6px_6px_0px_#FF007F] bg-[#0a0a0a]">
+                            <div class="text-lg md:text-xl text-gray-300 mb-3 font-bold flex flex-wrap items-center gap-1.5 leading-tight">
                                 <span>GÉNERO:</span>
                                 <span class="text-[#FF007F] font-black text-xl md:text-2xl">BUBBLEGUM PUNK</span>
                                 <span class="text-white font-black text-xl md:text-2xl">/</span>
                                 <span class="text-[#FF007F] font-black text-xl md:text-2xl">GRUNGE</span>
-                                <span class="text-white font-black text-xl md:text-2xl">/</span>
-                                <span class="text-[#FF007F] font-black text-xl md:text-2xl">ALTERNATIVE COVERS</span>
                             </div>
-                            <p class="text-lg md:text-xl text-gray-400 font-bold mt-4">
-                                ORIGEN: <span class="text-white font-black text-xl md:text-2xl">PUERTO RICO</span>
+                            <p class="text-lg md:text-xl text-gray-300 font-bold mt-4">
+                                ORIGEN: <span class="text-[#FF007F] font-black text-xl md:text-2xl">PUERTO RICO</span>
                             </p>
                         </div>
+                        <p class="font-black italic mt-8 text-5xl md:text-7xl tracking-tighter uppercase leading-none">
+                            <span class="grunge-text text-white" style="letter-spacing: 0.05em;">RAW SOUND</span> <br class="md:hidden"> <span class="grunge-text text-[#FF007F]" style="letter-spacing: 0.05em;">REAL ROCK</span>
+                        </p>
                     </div>
                 </div>
             </div>
-            
-            <div class="lg:w-1/2 w-full" data-aos="fade-left">
-                <div class="border-4 border-[#FF007F] bg-[#111] p-3 shadow-[12px_12px_0px_#FF007F] rounded-3xl relative z-10 transform md:-rotate-2 hover:rotate-0 transition duration-500 mx-auto max-w-xl">
-                    <div class="w-full overflow-hidden rounded-2xl">
-                         <img src="Full_Band.jpg" alt="MYŌ KILL Banda Completa" class="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition duration-700 block" onerror="this.src='https://via.placeholder.com/800x600/111/FF007F?text=Banda'">
+            <div class="md:w-1/2 w-full" data-aos="fade-left">
+                <div class="border-4 border-white rounded-2xl p-2 rotate-3 hover:rotate-0 transition duration-500 bg-[#111] shadow-[10px_10px_0px_#FF007F] relative z-10">
+                    <div class="w-full flex flex-col items-center justify-center overflow-hidden relative group cursor-pointer rounded-xl">
+                         <!-- BANDA COMPLETA (Nueva Foto) -->
+                         <img src="Full_Band.jpg" alt="MYŌ KILL Banda" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500 block rounded-xl">
                     </div>
-                    <div class="pt-4 pb-2 text-center font-black text-sm uppercase tracking-[0.5em] text-white">DESDE 2023</div>
+                    <div class="pt-3 pb-1 text-center font-black text-sm uppercase tracking-[0.5em] text-[#FF007F] bg-[#111]">DESDE 2023</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="banda" class="py-24 bg-[#0a0a0a] relative overflow-hidden">
+    <!-- CREW SECTION -->
+    <section id="banda" class="py-24 border-y-4 border-[#FF007F] relative bg-[#0a0a0a] overflow-hidden">
         
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic text-white section-title">El Crew</h2>
-                <div class="flex justify-center gap-4 text-[#FF007F] text-2xl font-black japanese-text mt-6"><span>ミョー</span><span>•</span><span>キル</span></div>
+                <h2 class="text-5xl md:text-7xl font-black mb-2 uppercase italic text-[#fcfcfc] section-title drop-shadow-[2px_2px_0px_rgba(255,0,127,0.5)]">El Crew</h2>
+                <div class="flex justify-center gap-4 text-[#FF007F] text-2xl font-black japanese-text mt-4"><span>ミョー</span><span>•</span><span>キル</span></div>
             </div>
 
-            <!-- CARLA: Highlighted Frontwoman Layout -->
-            <div class="w-full max-w-4xl mx-auto mb-12" data-aos="fade-up">
-                <div class="crew-card flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group p-6 md:p-8 border-[4px]">
-                    <div class="absolute -top-6 -right-6 text-[#FF007F] opacity-10 text-[10rem] font-black japanese-text rotate-12 group-hover:rotate-0 transition duration-700 pointer-events-none">ボーカル</div>
-                    
-                    <div class="w-full md:w-1/2 aspect-[4/5] overflow-hidden rounded-2xl border-4 border-gray-800 shadow-xl bg-[#0a0a0a]">
-                        <img src="Carla_New.jpg" alt="Carla - Vocals" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x800/111/FF007F?text=Carla'">
-                    </div>
-                    <div class="w-full md:w-1/2 text-left z-10">
-                        <div class="inline-block bg-[#FF007F] text-white px-4 py-1 rounded-full font-black text-xs tracking-widest uppercase mb-4 shadow-[3px_3px_0px_rgba(255,255,255,0.2)]">The Bubblegum Voice</div>
-                        <h4 class="text-5xl md:text-7xl font-black uppercase text-white mb-2 tracking-tighter">Carla</h4>
-                        <p class="text-[#FF007F] font-black tracking-[0.3em] uppercase text-sm md:text-base border-2 border-gray-700 inline-block px-4 py-2 rounded-xl mb-6 bg-[#0a0a0a]">Vocals</p>
-                        <p class="text-gray-400 font-bold leading-relaxed text-sm md:text-base">La energía cruda y el lado chicloso que lidera el asalto sonoro de MYŌ KILL.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 max-w-6xl mx-auto">
+                
+                <!-- CARLA (Frontwoman / Bloque Principal) -->
+                <div class="flyer-wrapper md:col-span-2 lg:col-span-2" data-aos="fade-up">
+                    <div class="group flex flex-col md:flex-row items-center flyer-card h-full gap-6">
+                        <div class="w-full md:w-1/2 aspect-[4/5] overflow-hidden relative rounded-lg">
+                            <img src="Carla_New.jpg" alt="Carla" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-1/2 text-left p-4">
+                            <span class="bg-[#FF007F] text-white text-xs font-black px-3 py-1 uppercase tracking-widest mb-3 inline-block rounded-full">The Bubblegum Voice</span>
+                            <h4 class="text-5xl font-black uppercase italic text-white mb-2">Carla</h4>
+                            <p class="text-[#111] font-bold tracking-widest uppercase text-sm bg-white inline-block px-4 py-1 mb-4 rounded-sm">Vocals</p>
+                            <p class="text-gray-400 text-sm italic font-bold">La energía cruda y el lado chicloso que lidera el asalto sonoro de MYŌ KILL.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- THE REST OF THE BAND -->
-            <div class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
                 <!-- CARLOS -->
-                <div class="crew-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-left group relative">
-                        <div class="w-full aspect-[4/5] mx-auto mb-5 overflow-hidden rounded-xl border-2 border-gray-800 bg-[#0a0a0a]">
-                             <img src="Mambo_New.JPG" alt="Carlos" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500/111/FF007F?text=Carlos'">
+                <div class="flyer-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-left group flex flex-col flyer-card h-full">
+                        <div class="w-full aspect-[4/5] mb-4 overflow-hidden relative rounded-lg">
+                             <img src="Mambo_New.JPG" alt="Carlos" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="text-3xl font-black uppercase text-white mb-2">Carlos</h4>
-                        <p class="text-white font-black tracking-widest uppercase text-[10px] bg-[#FF007F] inline-block px-3 py-1.5 rounded-lg shadow-sm">Bajo/Coros</p>
+                        <h4 class="text-3xl font-black uppercase italic text-white">Carlos</h4>
+                        <p class="text-white font-bold tracking-widest uppercase text-[10px] bg-[#FF007F] inline-block px-3 py-1 mt-2 rounded-sm w-max">Bajo/Coros</p>
                     </div>
                 </div>
 
                 <!-- WALDY -->
-                <div class="crew-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-left group relative">
-                        <div class="w-full aspect-[4/5] mx-auto mb-5 overflow-hidden rounded-xl border-2 border-gray-800 bg-[#0a0a0a]">
-                            <img src="Waldy_New.jpg" alt="Waldy" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500/111/FF007F?text=Waldy'">
+                <div class="flyer-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-left group flex flex-col flyer-card h-full">
+                        <div class="w-full aspect-[4/5] mb-4 overflow-hidden relative rounded-lg">
+                            <img src="Waldy_New.jpg" alt="Waldy" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="text-3xl font-black uppercase text-white mb-2">Waldy</h4>
-                        <p class="text-[#FF007F] font-black tracking-widest uppercase text-[10px] border border-gray-700 bg-[#0a0a0a] inline-block px-3 py-1.5 rounded-lg shadow-sm">Lead Guitar</p>
+                        <h4 class="text-3xl font-black uppercase italic text-white">Waldy</h4>
+                        <p class="text-white font-bold tracking-widest uppercase text-[10px] bg-transparent border border-white inline-block px-3 py-1 mt-2 rounded-sm w-max">Lead Guitar</p>
                     </div>
                 </div>
 
                 <!-- JAVY -->
-                <div class="crew-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-left group relative">
-                        <div class="w-full aspect-[4/5] mx-auto mb-5 overflow-hidden rounded-xl border-2 border-gray-800 bg-[#0a0a0a]">
-                            <img src="Javy_New.jpg" alt="Javy" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500/111/FF007F?text=Javy'">
+                <div class="flyer-wrapper" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-left group flex flex-col flyer-card h-full">
+                        <div class="w-full aspect-[4/5] mb-4 overflow-hidden relative rounded-lg">
+                            <img src="Javy_New.jpg" alt="Javy" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="text-3xl font-black uppercase text-white mb-2">Javy</h4>
-                        <p class="text-white font-black tracking-widest uppercase text-[10px] bg-[#FF007F] inline-block px-3 py-1.5 rounded-lg shadow-sm">Rythm Guitar</p>
+                        <h4 class="text-3xl font-black uppercase italic text-white">Javy</h4>
+                        <p class="text-white font-bold tracking-widest uppercase text-[10px] bg-[#FF007F] inline-block px-3 py-1 mt-2 rounded-sm w-max">Rythm Guitar</p>
                     </div>
                 </div>
 
                 <!-- ERI -->
-                <div class="crew-card lg:col-span-1 md:col-span-2 md:w-1/2 lg:w-full md:mx-auto" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-left group relative">
-                        <div class="w-full aspect-[4/5] mx-auto mb-5 overflow-hidden rounded-xl border-2 border-gray-800 bg-[#0a0a0a]">
-                             <img src="Eri_New.JPG" alt="Eri" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500/111/FF007F?text=Eri+Drums'">
+                <div class="flyer-wrapper" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-left group flex flex-col flyer-card h-full">
+                        <div class="w-full aspect-[4/5] mb-4 overflow-hidden relative rounded-lg">
+                             <img src="Eri_New.JPG" alt="Eri" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="text-3xl font-black uppercase text-white mb-2">Eri</h4>
-                        <p class="text-white border border-gray-700 font-black tracking-widest uppercase text-[10px] bg-[#0a0a0a] inline-block px-3 py-1.5 rounded-lg shadow-sm">Drums/Coros</p>
+                        <h4 class="text-3xl font-black uppercase italic text-white">Eri</h4>
+                        <p class="text-white font-bold tracking-widest uppercase text-[10px] bg-transparent border border-white inline-block px-3 py-1 mt-2 rounded-sm w-max">Drums/Coros</p>
                     </div>
                 </div>
                 
@@ -457,18 +468,18 @@
         </div>
     </section>
 
-    <section id="booking" class="py-20 border-t-4 border-[#FF007F] bg-[#0a0a0a]">
-        <div data-aos="zoom-in" class="container mx-auto px-6">
-            <div class="flex flex-col items-center gap-8 w-full max-w-2xl mx-auto z-20 relative bg-[#111] p-10 md:p-12 border-[4px] border-[#FF007F] rounded-[2rem] shadow-[12px_12px_0px_#FF007F]">
-                <h3 class="text-4xl md:text-5xl font-black uppercase text-white tracking-tighter text-center">Llévanos a <br/><span class="text-[#FF007F]">tu Venue</span></h3>
-                <p class="text-gray-400 font-bold text-center uppercase tracking-widest text-sm">Disponibles para festivales, barras y eventos privados.</p>
-                
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-6 w-full mt-4">
-                    <a href="https://wa.me/17876440452" target="_blank" class="w-full sm:w-auto bg-[#25D366] text-white py-4 px-8 font-black uppercase tracking-[0.2em] text-sm md:text-base rounded-2xl shadow-[6px_6px_0px_rgba(255,255,255,0.2)] hover:shadow-[3px_3px_0px_rgba(255,255,255,0.2)] hover:translate-y-1 transition-all flex items-center justify-center gap-3 border-2 border-[#25D366] hover:bg-transparent hover:text-[#25D366]">
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="py-20 relative bg-white overflow-hidden">
+        <div class="container mx-auto px-6 relative z-20">
+            <div data-aos="fade-up" class="mb-12 flex flex-col items-center gap-6 w-full max-w-2xl mx-auto p-8 md:p-12 border-4 border-[#111] rounded-3xl shadow-[12px_12px_0px_#FF007F] bg-[#fcfcfc]">
+                <h3 class="text-4xl md:text-5xl font-black uppercase italic text-black tracking-tighter text-center">¡Llévanos a tu Venue!</h3>
+                <p class="text-center text-gray-600 font-bold tracking-widest uppercase text-sm mb-4">Separa tu fecha para el próximo asalto sonoro.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6 w-full">
+                    <a href="https://wa.me/17876440452" target="_blank" class="w-full sm:w-auto bg-[#25D366] text-white py-4 px-8 rounded-xl font-black uppercase tracking-[0.2em] text-sm md:text-base shadow-[6px_6px_0px_#111] hover:shadow-[3px_3px_0px_#111] hover:translate-y-1 transition-all flex items-center justify-center gap-3 border-4 border-[#111] hover:bg-[#111] hover:text-[#25D366]">
                         <i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp
                     </a>
                     
-                    <a href="mailto:myokillmusic@gmail.com" class="w-full sm:w-auto bg-[#FF007F] text-white py-4 px-8 font-black uppercase tracking-[0.2em] text-sm md:text-base rounded-2xl shadow-[6px_6px_0px_rgba(255,255,255,0.2)] hover:shadow-[3px_3px_0px_rgba(255,255,255,0.2)] hover:translate-y-1 transition-all flex items-center justify-center gap-3 border-2 border-[#FF007F] hover:bg-transparent hover:text-[#FF007F]">
+                    <a href="mailto:myokillmusic@gmail.com" class="w-full sm:w-auto bg-[#111] text-white py-4 px-8 rounded-xl font-black uppercase tracking-[0.2em] text-sm md:text-base shadow-[6px_6px_0px_#FF007F] hover:shadow-[3px_3px_0px_#FF007F] hover:translate-y-1 transition-all flex items-center justify-center gap-3 border-4 border-[#111] hover:bg-[#FF007F] hover:border-[#FF007F]">
                         <i class="fa-solid fa-envelope text-2xl"></i> Correo
                     </a>
                 </div>
@@ -476,65 +487,72 @@
         </div>
     </section>
 
-    <!-- REDES SOCIALES -->
-    <section id="redes" class="py-24 bg-[#111] border-y-4 border-gray-800">
+    <!-- REDES SOCIALES SECTION (Amazon Removed, TikTok Added) -->
+    <section id="redes" class="py-24 bg-[#0a0a0a] border-t-4 border-white">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-16" data-aos="fade-up">
-                <h2 class="text-5xl md:text-7xl font-black mb-4 uppercase italic section-title">Conecta</h2>
-                <p class="font-bold tracking-widest text-gray-500 uppercase mt-4">Nuestra música en tu plataforma favorita</p>
+                <h2 class="text-5xl md:text-7xl font-black mb-4 uppercase italic section-title text-[#fcfcfc]">Síguenos</h2>
+                <p class="font-bold tracking-widest text-[#FF007F] uppercase">Escucha y conecta con la banda</p>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-6 md:gap-10 relative z-10">
-                <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-28 md:w-36" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="w-20 h-20 md:w-28 md:h-28 bg-[#0a0a0a] text-white flex items-center justify-center border-[3px] border-gray-700 group-hover:bg-[#1877F2] group-hover:border-[#1877F2] transition-colors duration-300 rounded-2xl shadow-[6px_6px_0px_rgba(255,0,127,0.5)]">
-                        <i class="fa-brands fa-facebook-f text-4xl md:text-5xl"></i>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-10 relative z-10 max-w-5xl mx-auto">
+                <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-[#111] text-[#fcfcfc] flex items-center justify-center border-4 border-white group-hover:bg-[#1877F2] transition-colors duration-300 rounded-2xl shadow-[8px_8px_0px_#FF007F]">
+                        <i class="fa-brands fa-facebook-f text-5xl md:text-6xl"></i>
                     </div>
-                    <span class="font-black uppercase tracking-widest text-xs text-white group-hover:text-[#FF007F] transition">Facebook</span>
+                    <span class="font-black uppercase tracking-widest text-sm text-[#fcfcfc]">Facebook</span>
                 </a>
-                <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-28 md:w-36" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-20 h-20 md:w-28 md:h-28 bg-[#0a0a0a] text-white flex items-center justify-center border-[3px] border-gray-700 group-hover:bg-[#E1306C] group-hover:border-[#E1306C] transition-colors duration-300 rounded-2xl shadow-[6px_6px_0px_rgba(255,0,127,0.5)]">
-                        <i class="fa-brands fa-instagram text-4xl md:text-5xl"></i>
+                <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-[#111] text-[#fcfcfc] flex items-center justify-center border-4 border-white group-hover:bg-[#E1306C] transition-colors duration-300 rounded-2xl shadow-[8px_8px_0px_#FF007F]">
+                        <i class="fa-brands fa-instagram text-5xl md:text-6xl"></i>
                     </div>
-                    <span class="font-black uppercase tracking-widest text-xs text-white group-hover:text-[#FF007F] transition">Instagram</span>
+                    <span class="font-black uppercase tracking-widest text-sm text-[#fcfcfc]">Instagram</span>
                 </a>
-                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-28 md:w-36" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="w-20 h-20 md:w-28 md:h-28 bg-[#0a0a0a] text-white flex items-center justify-center border-[3px] border-gray-700 group-hover:bg-[#1DB954] group-hover:border-[#1DB954] transition-colors duration-300 rounded-2xl shadow-[6px_6px_0px_rgba(255,0,127,0.5)]">
-                        <i class="fa-brands fa-spotify text-4xl md:text-5xl"></i>
+                <a href="https://www.tiktok.com/@myokillpr" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-[#111] text-[#fcfcfc] flex items-center justify-center border-4 border-white group-hover:bg-[#FE2C55] transition-colors duration-300 rounded-2xl shadow-[8px_8px_0px_#FF007F]">
+                        <i class="fa-brands fa-tiktok text-5xl md:text-6xl"></i>
                     </div>
-                    <span class="font-black uppercase tracking-widest text-xs text-white group-hover:text-[#FF007F] transition">Spotify</span>
+                    <span class="font-black uppercase tracking-widest text-sm text-[#fcfcfc]">TikTok</span>
                 </a>
-                <a href="https://music.apple.com/us/artist/myo-kill/1723690967" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-28 md:w-36" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="w-20 h-20 md:w-28 md:h-28 bg-[#0a0a0a] text-white flex items-center justify-center border-[3px] border-gray-700 group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors duration-300 rounded-2xl shadow-[6px_6px_0px_rgba(255,0,127,0.5)]">
-                        <i class="fa-brands fa-apple text-4xl md:text-5xl"></i>
+                <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-[#111] text-[#fcfcfc] flex items-center justify-center border-4 border-white group-hover:bg-[#FF0000] transition-colors duration-300 rounded-2xl shadow-[8px_8px_0px_#FF007F]">
+                        <i class="fa-brands fa-youtube text-5xl md:text-6xl"></i>
                     </div>
-                    <span class="font-black uppercase tracking-widest text-xs text-white group-hover:text-[#FF007F] transition">Apple</span>
+                    <span class="font-black uppercase tracking-widest text-sm text-[#fcfcfc]">YouTube</span>
                 </a>
-                <a href="https://music.amazon.com/albums/B0GSSKN2GR" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-28 md:w-36" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="w-20 h-20 md:w-28 md:h-28 bg-[#0a0a0a] text-white flex items-center justify-center border-[3px] border-gray-700 group-hover:bg-[#00A8E1] group-hover:border-[#00A8E1] transition-colors duration-300 rounded-2xl shadow-[6px_6px_0px_rgba(255,0,127,0.5)]">
-                        <i class="fa-brands fa-amazon text-4xl md:text-5xl"></i>
+                <a href="https://music.apple.com/us/artist/myo-kill/1723690967" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-[#111] text-[#fcfcfc] flex items-center justify-center border-4 border-white group-hover:bg-[#fcfcfc] group-hover:text-[#111] transition-colors duration-300 rounded-2xl shadow-[8px_8px_0px_#FF007F]">
+                        <i class="fa-brands fa-apple text-5xl md:text-6xl"></i>
                     </div>
-                    <span class="font-black uppercase tracking-widest text-xs text-white group-hover:text-[#FF007F] transition">Amazon</span>
+                    <span class="font-black uppercase tracking-widest text-sm text-[#fcfcfc]">Apple Music</span>
+                </a>
+                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="social-btn group flex flex-col items-center gap-4 w-32 md:w-40" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-[#111] text-[#fcfcfc] flex items-center justify-center border-4 border-white group-hover:bg-[#1DB954] transition-colors duration-300 rounded-2xl shadow-[8px_8px_0px_#FF007F]">
+                        <i class="fa-brands fa-spotify text-5xl md:text-6xl"></i>
+                    </div>
+                    <span class="font-black uppercase tracking-widest text-sm text-[#fcfcfc]">Spotify</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-12 pb-24 md:pb-12 bg-[#0a0a0a] border-t-[12px] border-[#FF007F]">
-        <div class="container mx-auto px-6 flex flex-col items-center text-white">
+    <!-- FOOTER (Amazon Removed, TikTok Added) -->
+    <footer class="py-12 pb-24 md:pb-12 bg-white border-t-8 border-[#FF007F]">
+        <div class="container mx-auto px-6 flex flex-col items-center text-black">
             <div class="text-3xl font-black tracking-tighter flex items-center cursor-pointer mb-8" onclick="window.scrollTo(0,0)">
                 <span>MYŌ <span class="text-[#FF007F] italic">KILL</span></span>
             </div>
             
-            <div class="flex space-x-8 md:space-x-12 mb-12 text-2xl md:text-3xl">
-                <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="text-gray-500 hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="text-gray-500 hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="text-gray-500 hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-spotify"></i></a>
-                <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="text-gray-500 hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-apple"></i></a>
-                <a href="https://music.amazon.com/albums/B0GSSKN2GR" target="_blank" class="text-gray-500 hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-amazon"></i></a>
+            <div class="flex space-x-6 md:space-x-10 mb-10 text-3xl">
+                <a href="https://youtube.com/channel/UCFyMWOUpaIPSW0jiZ09Pi9g?si=wNiTgI-5FU7hHzNx" target="_blank" class="hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/myokill?igsh=MW9qMTJ5Mjl0aHVxOQ==" target="_blank" class="hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1BieZpV1GV/?mibextid=wwXIfr" target="_blank" class="hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@myokillpr" target="_blank" class="hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://open.spotify.com/artist/0jNHwFOs863Bg5J3N1KFPF?si=ieCode0XRg2y5fsKQGstBw" target="_blank" class="hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://music.apple.com/us/album/concrete-steps-ep/1885808463" target="_blank" class="hover:text-[#FF007F] transition duration-300 transform hover:scale-125"><i class="fa-brands fa-apple"></i></a>
             </div>
             
-            <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-gray-600 text-center">
+            <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-gray-500 text-center">
                 © 2026 MYŌ KILL. BUBBLEGUM PUNK IS NOT DEAD.
             </p>
         </div>
